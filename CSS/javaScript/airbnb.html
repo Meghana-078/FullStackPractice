@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+<style>
+     /* .head{
+        width:100%;
+        height:200px;
+        border:1px solid black;
+    } */
+    .main{
+        display: grid;
+        grid-template-columns: 300px 300px 300px 300px;
+        gap:30px;
+         margin-top: 20px;   
+         }
+        img{
+            border-top-right-radius: 10%;
+            border-top-left-radius:10% ;
+            border-bottom-right-radius: 10%;
+            border-bottom-left-radius:10% ;
+
+        }
+        .footer-section{
+          width:100%;
+          height:600px; 
+          background-color: whitesmoke;
+        }
+        .footer-list {
+          display: none;
+          list-style: none;
+          padding-left: 20px;
+          display: flex;
+          justify-content: flex-start;
+          gap:100px;
+        }
+
+        .footer-item {
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+
+        .a{
+          display: flex;
+          justify-content:flex-start;
+          gap:230px;
+        }
+        .b{
+          display: flex;
+          justify-content: flex-start;
+          gap:100px;
+        }
+        li{
+          list-style: none;
+        } 
+        header {
+      width: 100%;
+      height: 200px;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+    }
+
+     .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color:white;
+      border-radius: 30px;
+      padding: 10px 20px;
+      gap: 20px; 
+      width: 50%;
+    }
+
+    .search-bar div {
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+    }
+
+    .a1 {
+
+      font-size: large;
+    }
+
+
+    .search-icon {
+      color: white;
+      border-radius: 50%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
+    }
+
+    .right-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .right-nav img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .right-nav .user-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid white;
+      border-radius: 20px;
+      cursor:pointer;
+    } 
+    .selection button{
+            flex-wrap: wrap;
+        }
+        .selection{
+            width:900px;
+            height:100px;
+            display:flex;
+            align-items:center;
+            overflow-x:scroll;
+            overflow-wrap: wrap;
+            scroll-behavior: smooth;
+            scrollbar-width:none;
+        }
+        .views{
+            display:flex;
+            gap:60px;  
+        }
+        .filter{
+            position: absolute;
+            top:220px;
+            left:990px;
+        }
+        .filt{
+            width:100px;
+            height:40px;
+            border:1px solid rgb(197, 191, 191,0.5);
+            background-color: white;
+            border-radius:6px;
+            padding:3px;
+            font-size:x-small;
+        }
+        .prices{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size: 14px;
+            position: absolute;
+            top:229px;
+            left:1100px;
+        }
+        .icon{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            cursor: pointer;
+        }
+       
+</style> 
+</head>
+<body>
+  <header>
+
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb Logo" />
+    </div>
+
+      <div class="btn-group">
+        <button class="btn btn-light rounded-pill"style="width:250px;">Where</button>
+        <button class="btn btn-light rounded-pill"style="width:100px ;">Check in</button>
+        <button class="btn btn-light rounded-pill"style="width:100px ;">Check out</button>
+        <button class="btn btn-light rounded-pill"style="width:250px ;">Who &emsp; &emsp;  &emsp; &emsp; <i class="bi bi-search"></i></button>
+    </div>
+      <div class="right-nav">
+        <button class="btn btn-light rounded-pill">Airbnb your home</button>
+       
+        <i class="bi bi-globe"></i>
+        <div class="user-menu">
+          <img src="https://img.icons8.com/ios-filled/50/menu.png" alt="Menu" />
+          <img src="https://img.icons8.com/ios-filled/50/user.png" alt="User" />
+        </div>
+      </div>
+    </header>
+    <div class="sections">
+      <div class="selection">
+          <ul class="views">
+              <li class="icon box1">
+                  <button><i class="fa-sharp-duotone fa-solid fa-water"></i></button>
+                  <p>Lake</p>
+              </li>
+              <li class="icon box2">
+                  <button><i class="fa-solid fa-icons"></i></button>
+                  <p>icons</p>
+              </li>
+              <li class="icon box3">
+                  <button><i class="fa-duotone fa-solid fa-warehouse"></i></button>
+                  <p>Lake</p>
+                  
+              </li>
+              <li class="icon box4">
+                  <button><i class="fa-solid fa-hotel"></i></i></button>
+                  <p>Farms</p>
+                  
+              </li>
+              <li class="icon box5">
+                  <button><i class="fa-regular fa-snowflake"></i></button>
+                  <p>Rooms</p>
+
+              </li>
+              <li class="icon box6">
+                  
+                  <button><i class="fa-solid fa-umbrella-beach"></i></button>
+                  <p>Arctic</p>
+              </li>
+              <li class="icon box7">
+                  <button><i class="fa-duotone 
+                      fa-solid fa-house-chimney-window"></i></button>
+                      <p>Beach</p>
+
+              </li>
+              <li class="icon box8">
+
+                  <button><i class="fa-duotone fa-solid fa-person-swimming"></i></button>
+                  <p>Amazing pool</p>
+              </li>
+              <li class="icon box9">
+
+                  <button><i class="fa-duotone fa-solid fa-utensils"></i></button>
+                  <p>Luxe</p>
+              </li>
+              <li class="icon box10">
+                  <button><i class="fa-solid fa-mountain-sun"></i></button>
+                  <p>countryside</p>
+
+              </li>
+              <li class="icon box11">
+                  <button><i class="fa-solid fa-tree"></i></button>
+                  <p>TreeHouses</p>
+
+              </li>
+              <li class="icon box12">
+                  <button><i class="fa-solid fa-sailboat"></i></button>
+                  <p>Boats</p>
+
+              </li>
+              <li class="icon box13">
+                  <button><i class="fa-solid fa-landmark-dome"></i></button>
+                  <p>Tree</p>
+
+              </li>
+              <li class="icon box14">
+                  <button><i class="fa-regular fa-chess-rook"></i></button>
+                  <p>historial homes</p>
+
+              </li>
+              <li class="icon box1">
+                  <button><i class="fa-sharp-duotone fa-solid fa-water"></i></button>
+                  <p>Castels</p>
+              </li>
+              <li class="icon box2">
+                  <button><i class="fa-solid fa-icons"></i></button>
+                  <p>Tiny homes</p>
+              </li>
+              <li class="icon box3">
+                  <button><i class="fa-duotone fa-solid fa-warehouse"></i></button>
+                  <p>Lakefront</p>
+                  
+              </li>
+              <li class="icon box4">
+                  <button><i class="fa-solid fa-hotel"></i></i></button>
+                  <p>Bed&Breakfast</p>
+                  
+              </li>
+              <li class="icon box5">
+                  <button><i class="fa-regular fa-snowflake"></i></button>
+                  <p>Grid</p>
+
+              </li>
+              <li class="icon box6">
+                  
+                  <button><i class="fa-solid fa-umbrella-beach"></i></button>
+                  <p>National parks</p>
+              </li>
+              <li class="icon box7">
+                  <button><i class="fa-duotone 
+                      fa-solid fa-house-chimney-window"></i></button>
+                      <p>OMG!</p>
+
+              </li>
+              <li class="icon box8">
+
+                  <button><i class="fa-duotone fa-solid fa-person-swimming"></i></button>
+                  <p>Design</p>
+              </li>
+              <li class="icon box9">
+
+                  <button><i class="fa-duotone fa-solid fa-utensils"></i></button>
+                  <p>Surfing</p>
+              </li>
+              <li class="icon box10">
+                  <button><i class="fa-solid fa-mountain-sun"></i></button>
+                  <p>Trending</p>
+
+              </li>
+              <li class="icon box11">
+                  <button><i class="fa-solid fa-tree"></i></button>
+                  <p>Canves</p>
+
+              </li>
+              <li class="icon box12">
+                  <button><i class="fa-solid fa-sailboat"></i></button>
+                  <p>Tropical</p>
+
+              </li>
+              <li class="icon box13">
+                  <button><i class="fa-solid fa-landmark-dome"></i></button>
+                  <p>Cabins</p>
+
+              </li>
+              <li class="icon box14">
+                  <button><i class="fa-regular fa-chess-rook"></i></button>
+                  <p>New</p>
+
+              </li>
+          </ul>     
+        </div>
+      </div>
+     
+    
+    <div class="filter">
+        <button class="filt"><i class="fa-solid fa-sliders"></i>&emsp;Filters</button>
+        
+    </div>
+    <div class="prices">
+        <p><i class="fa-solid fa-tags fa-rotate-by fa-xs" style=" color: #ff0000; --fa-rotate-angle: 320deg;"></i>
+        Prices include all fees</p>
+        </div>
+
+
+
+</div>
+    <div class="main">
+    <div class="card" style="width: 18rem;">
+        <img src="/air1.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kollam India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i><h6>4.93</h6></h5>
+          <p class="card-text">On Ashtamudi Lake</p>
+          <p class="card-text">13-18 Jun</p>
+          <p class="card-text">₹16422 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air2.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kottathara, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text"> Near Karalad Chira</p>
+          <p class="card-text"> 8-13 May</p>
+          <p class="card-text">₹34,230 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air3.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kodaikanal, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text">Near Kodaikanal Lake</p>
+          <p class="card-text"> 6-11 May</p>
+          <p class="card-text"> ₹11,298 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air4.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Vagamon, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text"> Near Vagamon Lake</p>
+          <p class="card-text">21-26 May</p>
+          <p class="card-text">₹53,635 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air5.webp" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Vythiri, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text"> Near Pookode Lake</p>
+          <p class="card-text">19-24 May</p>
+          <p class="card-text"> ₹35,376 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air6.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Nandi Hills, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text">769 kilometres away</p>
+          <p class="card-text">4-9 May</p>
+          <p class="card-text">₹29,477 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air7.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kottathara, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text">Near Karalad Chira</p>
+          <p class="card-text">14-19 May</p>
+          <p class="card-text">₹66,086 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air8.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kodaikanal, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text"> On Kodaikanal Lake</p>
+          <p class="card-text">4-9 May</p>
+          <p class="card-text">₹31,833 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air9.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kodaikanal, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text">1 min walk to Kodaikanal Lake/p>
+          <p class="card-text">31 May-5 Jun</p>
+          <p class="card-text">₹26,418 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air10.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Choodasandiram,Denkanikottai Taluk,India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text">Near Thattekere LakeNear Thattekere Lake</p>
+          <p class="card-text">4-9 May</p>
+          <p class="card-text"> ₹40,284 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air11.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Denkanikottai,India&emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text">Near Namaleri Lake</p>
+          <p class="card-text">5-10 May</p>
+          <p class="card-text">₹10,784 for 5 nights</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="/air12.avif" class="card-img-top" alt="" width="300px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">Kodaikanal, India &emsp; &emsp; &emsp;<i class="bi bi-star-fill" width="0.5px" height="0.5px"></i></h5>
+          <p class="card-text"> 5 min walk to Kodaikanal Lake</p>
+          <p class="card-text">8-13 May</p>
+          <p class="card-text">₹34,304Show price breakdown</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Inspiration for future gateways</h4>
+      <br>
+      <div class="footer-item">
+        Unique  Stays
+      </div>
+      <div class="footer-list">
+        <ul>
+        <li>Yurt Rentals </li>
+        <li>Farm Houses </li>
+        <li>Cottage Rentals </li>
+      </ul>
+      <ul>
+        <li>Yurt Rentals</li>
+        <li>Farm Cottages </li>
+        <li>Holiday Cottages 
+        </li>
+      </ul>
+      <ul>
+        <li>Castle Rentals </li>
+        <li>Cabin Rentals </li>
+        <li>Mansion Rentals </li>
+      </ul>
+      <ul>
+        <li>Houseboats </li>
+        <li>Luxury Cabins </li>
+        <li>Villa Rentals</li>
+      </ul>
+      <ul>
+        <li>Castle Rentals </li>
+        <li>Cabin Rentals </li>
+        <li>Mansion Rentals </li>
+      </ul>
+      <ul>
+        <li>Houseboats </li>
+        <li>Luxury Cabins </li>
+        <li>Villa Rentals</li>
+      </ul>
+      </div>
+    
+      <div class="footer-item" >
+        Categories
+      </div>
+      <div  class="footer-list">
+        <ul>
+          <li>Amazing Pools</li>
+          <li>Country side</li>
+          <li>OMG!</li>
+        </ul>
+        <ul>
+          <li>Arctic</li>
+          <li>Design</li>
+          <li>Tiny homes</li>
+        </ul>
+        <ul>
+          <li>Camping</li>
+          <li>Earth homes</li>
+          <li>Towers</li>
+        </ul>
+        <ul>
+          <li>Camper vans</li>
+          <li>Farms</li>
+          <li>Windmills</li>
+        </ul>
+        <ul>
+          <li>Castles</li>
+          <li>National Parks</li>
+          <li>Luxe</li>
+        </ul>
+        <ul>
+          <li>Containers</li>
+          <li>vineyards</li>
+        </ul>
+      </div>
+      <br>
+      <div class="a">
+        <ul>
+          <li><b>Support</b></li>
+          <li>Report neighbourhood concern</li>
+          <li> Help Centre</li>
+          <li>AirCover</li>
+          <li>Anti-discrimination</li>
+          <li>Disability support</li>
+          <li>Cancellation options</li>
+          <li>Report neighbourhood concern</li>
+        </ul>
+        <ul>
+          <li><b>Hosting</b></li>
+          <li>Airbnb your home</li>
+          <li>AirCover for Hosts</li>
+          <li>Hosting resources</li>
+          <li>Community forum</li>
+          <li>Hosting responsibly</li>
+          <li>Join a free Hosting class</li>
+          <li>Find a co-host</li>
+        </ul>
+        <ul>
+          <li><b>Airbnb</b></li>
+          <li>Newsroom</li>
+          <li>New features</li>
+          <li>Careers</li>
+          <li>Investors</li>
+          <li>Airbnb.org emergency stays</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p>  &copy; 2025 Airbnb &emsp;Privacy & Legal &emsp;Terms &emsp; Sitemap &emsp;Company Details &emsp;&emsp;  </p> 
+   </div>
+   
+</body>
+</html>

@@ -1,0 +1,3144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: white;
+            display:grid;
+            gap:10px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12{
+            width:600px;
+            height:600px;
+            background-color: white;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .c1{
+            display:inline-grid;
+            grid-template-columns:repeat(7,85px);
+            grid-template-rows: 100px 50px 50px 100px 100px 100px 100px;
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .div1{
+            background-color: red;
+            grid-column: 1/2;
+            grid-row: 1/5;
+            border: 2px solid black;
+        }
+        .div2{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 1/5;
+            border: 2px solid black;
+        }
+        .div3{
+            background-color:white;
+            grid-column: 3/4;
+            grid-row: 1/5;
+            border: 2px solid black;
+        }
+        .div4{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 1/1;
+            border: 2px solid black;
+        }
+        .div5{
+            background-color:white;
+            grid-column: 5/6;
+            grid-row: 1/3;
+            border: 2px solid black;
+        }
+        .div6{
+            background-color:white;
+            grid-column: 6/7;
+            grid-row: 1/3;
+            border: 2px solid black;
+        }
+        .div7{
+            background-color:white;
+            grid-column: 7/8;
+            grid-row: 1/3;
+            border: 2px solid black;
+        }
+        .div8{
+            background-color:blue;
+            grid-column: 1/2;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .div9{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .div10{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 2/4;
+            border: 2px solid black;
+        }
+        .div11{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 4/5;
+            border: 2px solid black;
+        }
+        .div12{
+            background-color:white;
+            grid-column: 5/6;
+            grid-row: 3/5;
+            border: 2px solid black;
+        }
+        .div13{
+            background-color:white;
+            grid-column: 6/7;
+            grid-row: 3/5;
+            border: 2px solid black;
+        }
+        .div14{
+            background-color:white;
+            grid-column: 7/8;
+            grid-row: 3/5;
+            border: 2px solid black;
+        }
+        .div15{
+            background-color:blue;
+            grid-column: 3/4;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .div16{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .div17{
+            background-color:blue;
+            grid-column: 5/8;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .div18{
+            background-color:white;
+            grid-column: 1/2;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .div19{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .div20{
+            background-color:white;
+            grid-column: 3/4;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .div21{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .div22{
+            background-color:white;
+            grid-column: 5/8;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .div23{
+            background-color:white;
+            grid-column: 1/2;
+            grid-row: 7/8;
+            border: 2px solid black;
+        }
+        .div24{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 7/8;
+            border: 2px solid black;
+        }
+        .div25{
+            background-color:yellow;
+            grid-column: 3/4;
+            grid-row: 7/8;
+            border: 2px solid black;
+        }
+        .div26{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 7/8;
+            border: 2px solid black;
+        }
+        .div27{
+            background-color:white;
+            grid-column: 5/8;
+            grid-row: 7/8;
+            border: 2px solid black;
+        }
+        .c2{
+            display:inline-grid;
+            grid-template-columns:repeat(10,60px);
+            grid-template-rows: repeat(12,50px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .d1{
+            background-color:white;
+            grid-column: 1/2;
+            grid-row: 1/4;
+            border: 2px solid black;
+        }
+        .d2{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 1/4;
+            border: 2px solid black;
+        }
+        .d3{
+            background-color:yellow;
+            grid-column: 3/5;
+            grid-row: 1/4;
+            border: 2px solid black;
+        }
+        .d4{
+            background-color:white;
+            grid-column: 5/7;
+            grid-row: 1/4;
+            border: 2px solid black;
+        }
+        .d5{
+            background-color:white;
+            grid-column: 7/9;
+            grid-row: 1/4;
+            border: 2px solid black;
+        }
+        .d6{
+            background-color:white;
+            grid-column: 9/10;
+            grid-row: 1/2;
+            border: 2px solid black;
+        }
+        .d7{
+            background-color:white;
+            grid-column: 10/11;
+            grid-row: 1/2;
+            border: 2px solid black;
+        }
+        .d8{
+            background-color:white;
+            grid-column: 9/10;
+            grid-row: 2/3;
+            border: 2px solid black;
+        }
+        .d9{
+            background-color:white;
+            grid-column: 10/11;
+            grid-row: 2/3;
+            border: 2px solid black;
+        }
+        .d10{
+            background-color:white;
+            grid-column: 9/10;
+            grid-row: 3/4;
+            border: 2px solid black;
+        }
+        .d11{
+            background-color:blue;
+            grid-column: 10/11;
+            grid-row: 3/4;
+            border: 2px solid black;
+        }
+        .d12{
+            background-color:white;
+            grid-column: 1/2;
+            grid-row: 4/7;
+            border: 2px solid black;
+        }
+        .d13{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 4/7;
+            border: 2px solid black;
+        }
+        .d14{
+            background-color:white;
+            grid-column: 3/4;
+            grid-row: 4/5;
+            border: 2px solid black;
+        }
+        .d15{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 4/5;
+            border: 2px solid black;
+        }
+        .d16{
+            background-color:blue;
+            grid-column: 3/4;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .d17{
+            background-color:yellow;
+            grid-column: 4/5;
+            grid-row: 5/6;
+            border: 2px solid black;
+        }
+        .d18{
+            background-color:blue;
+            grid-column: 3/4;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .d19{
+            background-color:white;
+            grid-column: 4/5;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .d20{
+            background-color:red;
+            grid-column: 5/7;
+            grid-row: 4/7;
+            border: 2px solid black;
+        }
+        .d21{
+            background-color:white;
+            grid-column: 7/8;
+            grid-row: 4/7;
+            border: 2px solid black;
+        }
+        .d22{
+            background-color:white;
+            grid-column: 8/9;
+            grid-row: 4/7;
+            border: 2px solid black;
+        }
+        .d23{
+            background-color:red;
+            grid-column: 9/11;
+            grid-row: 4/7;
+            border: 2px solid black;
+        }
+        .d24{
+            background-color:red;
+            grid-column: 1/2;
+            grid-row: 7/9;
+            border: 2px solid black;
+        }
+        .d25{
+            background-color:white;
+            grid-column: 2/3;
+            grid-row: 7/9;
+            border: 2px solid black;
+        }
+        .d26{
+            background-color:blue;
+            grid-column: 3/5;
+            grid-row: 7/9;
+            border: 2px solid black;
+        }
+        .d27{
+            background-color:white;
+            grid-column: 5/7;
+            grid-row: 7/9;
+            border: 2px solid black;
+        }
+        .d28{
+            background-color:white;
+            grid-column: 7/9;
+            grid-row: 7/8;
+            border: 2px solid black;
+        }
+        .d29{
+            background-color:white;
+            grid-column: 7/9;
+            grid-row: 8/9;
+            border: 2px solid black;
+        }
+        .d30{
+            background-color:white;
+            grid-column: 9/11;
+            grid-row: 7/9;
+            border: 2px solid black;
+        }
+        .d31{
+            background-color:yellow;
+            grid-column:1/2;
+            grid-row: 9/10;
+            border: 2px solid black;
+        }
+        .d32{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 9/10;
+            border: 2px solid black;
+        }
+        .d33{
+            background-color:white;
+            grid-column:3/5;
+            grid-row: 9/10;
+            border: 2px solid black;
+        }
+        .d34{
+            background-color:blue;
+            grid-column:5/7;
+            grid-row: 9/10;
+            border: 2px solid black;
+        }
+        .d35{
+            background-color:yellow;
+            grid-column:7/9;
+            grid-row: 9/10;
+            border: 2px solid black;
+        }
+        .d36{
+            background-color:white;
+            grid-column:9/11;
+            grid-row: 9/10;
+            border: 2px solid black;
+        }
+        .d37{
+            background-color:yellow;
+            grid-column:1/2;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d38{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d39{
+            background-color:white;
+            grid-column:3/5;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d40{
+            background-color:yellow;
+            grid-column:5/6;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d41{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d42{
+            background-color:white;
+            grid-column:7/9;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d43{
+            background-color:white;
+            grid-column:9/11;
+            grid-row: 10/11;
+            border: 2px solid black;
+        }
+        .d44{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 11/12;
+            border: 2px solid black;
+        }
+        .d45{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 12/13;
+            border: 2px solid black;
+        }
+        .d46{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 11/13;
+            border: 2px solid black;
+        }
+        .d47{
+            background-color:white;
+            grid-column:3/5;
+            grid-row: 11/13;
+            border: 2px solid black;
+        }
+        .d48{
+            background-color:white;
+            grid-column:5/7;
+            grid-row: 11/13;
+            border: 2px solid black;
+        }
+        .d49{
+            background-color:white;
+            grid-column:7/9;
+            grid-row: 11/13;
+            border: 2px solid black;
+        }
+        .d50{
+            background-color:white;
+            grid-column:9/11;
+            grid-row: 11/13;
+            border: 2px solid black;
+        }
+        .c3{
+            display:inline-grid;
+            grid-template-columns:57px 35px 30px 30px 30px 60px 60px 60px 60px 60px 60px 60px;
+            grid-template-rows: repeat(5,120px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .m1{
+            background-color: white;
+            grid-column:1/3;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m2{
+            background-color: white;
+            grid-column:3/5;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m3{
+            background-color: white;
+            grid-column:5/7;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m4{
+            background-color: white;
+            grid-column:7/8;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m5{
+            background-color: white;
+            grid-column:8/10;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m6{
+            background-color: white;
+            grid-column:10/11;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m7{
+            background-color: white;
+            grid-column:11/12;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m8{
+            background-color: white;
+            grid-column:12/13;
+            grid-row: 1/2;
+            border:2px solid black
+        }
+        .m9{
+            background-color: white;
+            grid-column:1/2;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m10{
+            background-color: red;
+            grid-column:2/4;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m11{
+            background-color: white;
+            grid-column:4/6;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m12{
+            background-color: white;
+            grid-column:6/7;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m13{
+            background-color: white;
+            grid-column:7/8;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m14{
+            background-color: white;
+            grid-column:8/10;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m15{
+            background-color: blue;
+            grid-column:10/11;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m16{
+            background-color: yellow;
+            grid-column:11/12;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m17{
+            background-color: white;
+            grid-column:12/13;
+            grid-row: 2/3;
+            border:2px solid black
+        }
+        .m18{
+            background-color: white;
+            grid-column:1/7;
+            grid-row: 3/5;
+            border:2px solid black
+        }
+        .m19{
+            background-color: white;
+            grid-column:7/8;
+            grid-row: 3/5;
+            border:2px solid black
+        }
+        .m20{
+            background-color: yellow;
+            grid-column:8/9;
+            grid-row: 3/4;
+            border:2px solid black
+        }
+        .m21{
+            background-color: yellow;
+            grid-column:9/10;
+            grid-row: 3/4;
+            border:2px solid black
+        }
+        .m22{
+            background-color: white;
+            grid-column:10/11;
+            grid-row: 3/5;
+            border:2px solid black
+        }
+        .m23{
+            background-color: yellow;
+            grid-column:11/12;
+            grid-row: 3/5;
+            border:2px solid black
+        }
+        .m24{
+            background-color: white;
+            grid-column:12/13;
+            grid-row: 3/5;
+            border:2px solid black
+        }
+        .m25{
+            background-color: white;
+            grid-column:8/9;
+            grid-row: 4/5;
+            border:2px solid black
+        }
+        .m26{
+            background-color: white;
+            grid-column:9/10;
+            grid-row: 4/5;
+            border:2px solid black
+        }
+        .m27{
+            background-color:red;
+            grid-column:1/7;
+            grid-row: 5/6;
+            border:2px solid black
+        }
+        .m28{
+            background-color: white;
+            grid-column:7/8;
+            grid-row: 5/6;
+            border:2px solid black
+        }
+        .m29{
+            background-color: white;
+            grid-column:8/10;
+            grid-row: 5/6;
+            border:2px solid black
+        }
+        .m30{
+            background-color: white;
+            grid-column:10/11;
+            grid-row: 5/6;
+            border:2px solid black
+        }
+        .m31{
+            background-color: yellow;
+            grid-column:11/12;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .m32{
+            background-color: white;
+            grid-column:12/13;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .c4{
+            display:inline-grid;
+            grid-template-columns:repeat(10,60px);
+            grid-template-rows: repeat(8,75px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .n1{
+            background-color: yellow;
+            grid-column:1/4;
+            grid-row: 1/4;
+            border:2px solid black;
+        }
+        .n2{
+            background-color: white;
+            grid-column:4/5;
+            grid-row: 1/4;
+            border:2px solid black;
+        }
+        .n3{
+            background-color: white;
+            grid-column:5/6;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .n4{
+            background-color: white;
+            grid-column:6/7;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .n5{
+            background-color: white;
+            grid-column:7/8;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .n6{
+            background-color: white;
+            grid-column:8/11;
+            grid-row: 1/4;
+            border:2px solid black;
+        }
+        .n7{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .n8{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .n9{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .n10{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .n11{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .n12{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .n13{
+            background-color: white;
+            grid-column:1/4;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .n14{
+            background-color: white;
+            grid-column:4/5;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .n15{
+            background-color:blue;
+            grid-column:5/8;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .n16{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .n17{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .n18{
+            background-color:yellow;
+            grid-column:10/11;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .n19{
+            background-color:white;
+            grid-column:1/4;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .n20{
+            background-color:white;
+            grid-column:4/5;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .n21{
+            background-color:white;
+            grid-column:5/8;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .n22{
+            background-color:white;
+            grid-column:8/11;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .n23{
+            background-color: white;
+            grid-column: 1/4;
+            grid-row: 6/7;
+            border: 2px solid black;
+        }
+        .n24{
+            background-color:red;
+            grid-column:1/2;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .n25{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .n26{
+            background-color:blue;
+            grid-column:3/4;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .n27{
+            background-color:blue;
+            grid-column:4/5;
+            grid-row: 7/9;
+            border:2px solid black;
+        }
+        .n28{
+            background-color:blue;
+            grid-column:5/8;
+            grid-row: 7/9;
+            border:2px solid black;
+        }
+        .n29{
+            background-color:white;
+            grid-column:8/11;
+            grid-row: 7/9;
+            border:2px solid black;
+        }
+        .n30{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .n31{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .n32{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .c5{
+            display:inline-grid;
+            grid-template-columns:repeat(11,55px);
+            grid-template-rows: repeat(10,60px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .o1{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .o2{
+            background-color:white;
+            grid-column:2/4;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .o3{
+            background-color:yellow;
+            grid-column:4/5;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .o4{
+            background-color:white;
+            grid-column:5/7;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .o5{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .o6{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .o7{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .o8{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .o9{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .o10{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .o11{
+            background-color:red;
+            grid-column:2/4;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .o12{
+            background-color:white;
+            grid-column:4/5;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .o13{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .o14{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .o15{
+            background-color:blue;
+            grid-column:1/3;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .o16{
+            background-color:white;
+            grid-column:3/5;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .o17{
+            background-color:white;
+            grid-column:5/7;
+            grid-row: 3/6;
+            border:2px solid black;
+        }
+        .o18{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 3/6;
+            border:2px solid black;
+        }
+        .o19{
+            background-color:white;
+            grid-column:8/10;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .o20{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 3/6;
+            border:2px solid black;
+        }
+        .o21{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 3/6;
+            border:2px solid black;
+        }
+        .o22{
+            background-color:white;
+            grid-column:1/3;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .o23{
+            background-color:blue;
+            grid-column:3/5;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .o24{
+            background-color:white;
+            grid-column:8/10;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .o25{
+            background-color:white;
+            grid-column:1/3;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .o26{
+            background-color:red;
+            grid-column:3/5;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .o27{
+            background-color:white;
+            grid-column:8/10;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .o28{
+            background-color:white;
+            grid-column:1/5;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .o29{
+            background-color:white;
+            grid-column:5/7;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .o30{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .o31{
+            background-color:red;
+            grid-column:8/10;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .o32{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .o33{
+            background-color:red;
+            grid-column:11/12;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .o34{
+            background-color:white;
+            grid-column:1/5;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .o35{
+            background-color:white;
+            grid-column:5/7;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .o36{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .o37{
+            background-color:white;
+            grid-column:8/10;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .o38{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .o39{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .o40{
+            background-color:white;
+            grid-column:1/5;
+            grid-row: 8/11;
+            border:2px solid black;
+        }
+        .o41{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .o42{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .o43{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 8/11;
+            border:2px solid black;
+        }
+        .o44{
+            background-color:white;
+            grid-column:8/10;
+            grid-row: 8/11;
+            border:2px solid black;
+        }
+        .o45{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 8/11;
+            border:2px solid black;
+        }
+        .o46{
+            background-color:blue;
+            grid-column:11/12;
+            grid-row: 8/11;
+            border:2px solid black;
+        }
+        .o47{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .o48{
+            background-color:yellow;
+            grid-column:6/7;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .o49{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 10/11;
+            border:2px solid black;
+        }
+        .o50{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 10/11;
+            border:2px solid black;
+        }
+        .c6{
+            display:inline-grid;
+            grid-template-columns:repeat(9,67px);
+            grid-template-rows: 76px 76px 30px 30px 76px 76px 76px 76px 76px; 
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .p1{
+            background-color:white;
+            grid-column:1/3;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p2{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p3{
+            background-color:white;
+            grid-column:4/5;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p4{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p5{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p6{
+            background-color:red;
+            grid-column:7/9;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p7{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .p8{
+            background-color:blue;
+            grid-column:1/2;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .p9{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .p10{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 2/6;
+            border:2px solid black;
+        }
+        .p11{
+            background-color:red;
+            grid-column:1/2;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .p12{
+            background-color:white;
+            grid-column:4/7;
+            grid-row: 2/4;
+            border:2px solid black;
+        }
+        .p13{
+            background-color:yellow;
+            grid-column:7/8;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .p14{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .p15{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 2/6;
+            border:2px solid black;
+        }
+        .p16{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .p17{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .p18{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .p19{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .p20{
+            background-color:yellow;
+            grid-column:4/7;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .p21{
+            background-color:red;
+            grid-column:7/8;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .p22{
+            background-color:red;
+            grid-column:7/8;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .p23{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .p24{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .p25{
+            background-color:blue;
+            grid-column:1/3;
+            grid-row: 6/9;
+            border:2px solid black;
+        }
+        .p26{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 6/9;
+            border:2px solid black;
+        }
+        .p27{
+            background-color:white;
+            grid-column:4/7;
+            grid-row: 6/9;
+            border:2px solid black;
+        }
+        .p28{
+            background-color:white;
+            grid-column:7/9;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .p29{
+            background-color:white;
+            grid-column:7/9;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .p30{
+            background-color:white;
+            grid-column:7/9;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .p31{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 6/9;
+            border:2px solid black;
+        }
+        .p32{
+            background-color:white;
+            grid-column:1/3;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .p33{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .p34{
+            background-color:white;
+            grid-column:4/7;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .p35{
+            background-color:white;
+            grid-column:7/9;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .p36{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .c7{
+            display:inline-grid;
+            grid-template-columns:repeat(8,75px);
+            grid-template-rows: 50px 45px 45px 50px 50px 50px 50px 50px 50px 50px 50px 50px ; 
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .q1{
+            background-color:red;
+            grid-column:1/4;
+            grid-row: 1/5;
+            border:2px solid black;
+        }
+        .q2{
+            background-color:red;
+            grid-column:4/6;
+            grid-row: 1/5;
+            border:2px solid black;
+        }
+        .q3{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 1/5;
+            border:2px solid black;
+        }
+        .q4{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .q5{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .q6{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .q7{
+            background-color:red;
+            grid-column:8/9;
+            grid-row: 2/4;
+            border:2px solid black;
+        }
+        .q8{
+            background-color:yellow;
+            grid-column:8/9;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .q9{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .q10{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .q11{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .q12{
+            background-color:white;
+            grid-column:4/6;
+            grid-row: 5/8;
+            border:2px solid black;
+        }
+        .q13{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 5/8;
+            border:2px solid black;
+        }
+        .q14{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 5/8;
+            border:2px solid black;
+        }
+        .q15{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 5/8;
+            border:2px solid black;
+        }
+        .q16{
+            background-color:blue;
+            grid-column:1/2;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .q17{
+            background-color:red;
+            grid-column:2/3;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .q18{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .q19{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .q20{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .q21{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .q22{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .q23{
+            background-color:white;
+            grid-column:1/4;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .q24{
+            background-color:white;
+            grid-column:4/6;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .q25{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .q26{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .q27{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 8/9;
+            border:2px solid black;
+        }
+        .q28{
+            background-color:red;
+            grid-column:1/4;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .q29{
+            background-color:white;
+            grid-column:4/6;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .q30{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .q31{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .q32{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 9/10;
+            border:2px solid black;
+        }
+        .q33{
+            background-color:blue;
+            grid-column:1/4;
+            grid-row: 10/13;
+            border:2px solid black;
+        }
+        .q34{
+            background-color:blue;
+            grid-column:4/5;
+            grid-row: 10/11;
+            border:2px solid black;
+        }
+        .q35{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 10/11;
+            border:2px solid black;
+        }
+        .q36{
+            background-color:red;
+            grid-column:6/7;
+            grid-row: 10/13;
+            border:2px solid black;
+        }
+        .q37{
+            background-color:yellow;
+            grid-column:7/8;
+            grid-row: 10/13;
+            border:2px solid black;
+        }
+        .q38{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 10/13;
+            border:2px solid black;
+        }
+        .q39{
+            background-color:white;
+            grid-column:4/5;
+            grid-row: 11/12;
+            border:2px solid black;
+        }
+        .q40{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 11/12;
+            border:2px solid black;
+        }
+        .q41{
+            background-color:red;
+            grid-column:4/5;
+            grid-row: 12/13;
+            border:2px solid black;
+        }
+        .q42{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 12/13;
+            border:2px solid black;
+        }
+        .c8{
+            display:inline-grid;
+            grid-template-columns: 60px 60px 30px 30px 60px 60px 60px 60px 60px 60px 60px  ; 
+            grid-template-rows:repeat(7,85px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .r1{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .r2{
+            background-color:white;
+            grid-column:2/6;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .r3{
+            background-color:blue;
+            grid-column:6/7;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .r4{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .r5{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .r6{
+            background-color:yellow;
+            grid-column:9/10;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .r7{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .r8{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .r9{
+            background-color:red;
+            grid-column:1/2;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .r10{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .r11{
+            background-color:white;
+            grid-column:3/5;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .r12{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .r13{
+            background-color:white;
+            grid-column:6/9;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .r14{
+            background-color:yellow;
+            grid-column:6/7;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .r15{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .r16{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .r17{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .r18{
+            background-color:red;
+            grid-column:3/5;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .r19{
+            background-color:yellow;
+            grid-column:5/6;
+            grid-row: 4/5;
+            border:2px solid black;
+        }
+        .r20{
+            background-color:white;
+            grid-column:9/11;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .r21{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .r22{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .r23{
+            background-color:yellow;
+            grid-column:2/4;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .r24{
+            background-color:white;
+            grid-column:4/6;
+            grid-row: 5/6;
+            border:2px solid black;
+        }
+        .r25{
+            background-color:yellow;
+            grid-column:2/4;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .r26{
+            background-color:white;
+            grid-column:4/6;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .r27{
+            background-color:yellow;
+            grid-column:6/9;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .r28{
+            background-color:white;
+            grid-column:9/11;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .r29{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .r30{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .r31{
+            background-color:white;
+            grid-column:2/6;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .r32{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .r33{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .r34{
+            background-color:blue;
+            grid-column:8/9;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .r35{
+            background-color:red;
+            grid-column:9/11;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .r36{
+            background-color:white;
+            grid-column:11/12;
+            grid-row: 7/8;
+            border:2px solid black;
+        }
+        .c9{
+            display:inline-grid;
+            grid-template-columns:repeat(10,60px) ; 
+            grid-template-rows:90px 90px 90px 30px 30px 90px 90px 90px;
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .s1{
+            background-color:yellow;
+            grid-column:1/4;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .s2{
+            background-color:white;
+            grid-column:4/5;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .s3{
+            background-color:blue;
+            grid-column:5/6;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .s4{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .s5{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 1/2;
+            border:2px solid black;
+        }
+        .s6{
+            background-color:white;
+            grid-column:8/11;
+            grid-row: 1/3;
+            border:2px solid black;
+        }
+        .s7{
+            background-color:white;
+            grid-column:5/6;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .s8{
+            background-color:white;
+            grid-column:6/7;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .s9{
+            background-color:white;
+            grid-column:7/8;
+            grid-row: 2/3;
+            border:2px solid black;
+        }
+        .s10{
+            background-color:white;
+            grid-column:1/2;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .s11{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .s12{
+            background-color:white;
+            grid-column:3/4;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .s13{
+            background-color:white;
+            grid-column:4/5;
+            grid-row: 3/7;
+            border:2px solid black;
+        }
+        .s14{
+            background-color:red;
+            grid-column:5/8;
+            grid-row: 3/4;
+            border:2px solid black;
+        }
+        .s15{
+            background-color:white;
+            grid-column:5/8;
+            grid-row: 4/6;
+            border:2px solid black;
+        }
+        .s16{
+            background-color:red;
+            grid-column:5/8;
+            grid-row: 6/7;
+            border:2px solid black;
+        }
+        .s17{
+            background-color:yellow;
+            grid-column:1/2;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .s18{
+            background-color:white;
+            grid-column:2/3;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .s19{
+            background-color:blue;
+            grid-column:3/4;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .s20{
+            background-color:white;
+            grid-column:8/9;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .s21{
+            background-color:red;
+            grid-column:9/10;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .s22{
+            background-color:white;
+            grid-column:10/11;
+            grid-row: 3/5;
+            border:2px solid black;
+        }
+        .s23{
+            background-color:blue;
+            grid-column:8/9;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .s24{
+            background-color:white;
+            grid-column:9/10;
+            grid-row: 5/7;
+            border:2px solid black;
+        }
+        .s25{
+            background-color:white;
+            grid-column:10/11;
+            grid-row:5/7;
+            border:2px solid black;
+        }
+        .s26{
+            background-color:white;
+            grid-column:1/4;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+        .s27{
+            background-color:white;
+            grid-column:4/5;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+        .s28{
+            background-color:white;
+            grid-column:5/8;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+        .s29{
+            background-color:white;
+            grid-column:8/11;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+        .s30{
+            background-color:yellow;
+            grid-column:1/4;
+            grid-row:8/9;
+            border:2px solid black;
+        }
+        .s31{
+            background-color:white;
+            grid-column:4/5;
+            grid-row:8/9;
+            border:2px solid black;
+        }
+        .s32{
+            background-color:white;
+            grid-column:5/8;
+            grid-row:8/9;
+            border:2px solid black;
+        }
+        .s33{
+            background-color:white;
+            grid-column:8/11;
+            grid-row:8/9;
+            border:2px solid black;
+        }
+        .c10{
+            display:inline-grid;
+            grid-template-columns:repeat(5,120px) ; 
+            grid-template-rows:repeat(6,100px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .t1{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:1/3;
+            border:2px solid black;
+        }
+        .t2{
+            background-color:red;
+            grid-column:2/3;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .t3{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:2/3;
+            border:2px solid black;
+        }
+        .t4{
+            background-color:white;
+            grid-column:3/4;
+            grid-row:1/3;
+            border:2px solid black;
+        }
+        .t5{
+            background-color:yellow;
+            grid-column:4/5;
+            grid-row:1/3;
+            border:2px solid black;
+        }
+        .t6{
+            background-color:yellow;
+            grid-column:5/6;
+            grid-row:1/3;
+            border:2px solid black;
+        }
+        .t7{
+            background-color:yellow;
+            grid-column:1/2;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .t8{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .t9{
+            background-color:red;
+            grid-column:3/4;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .t10{
+            background-color:white;
+            grid-column:4/5;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .t11{
+            background-color:white;
+            grid-column:5/6;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .t12{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .t13{
+            background-color:yellow;
+            grid-column:2/3;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .t14{
+            background-color:white;
+            grid-column:3/4;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .t15{
+            background-color:white;
+            grid-column:4/5;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .t16{
+            background-color:blue;
+            grid-column:5/6;
+            grid-row:4/5;
+            border:2px solid black;
+        }
+        .t17{
+            background-color:white;
+            grid-column:5/6;
+            grid-row:5/6;
+            border:2px solid black;
+        }
+        .t18{
+            background-color:red;
+            grid-column:1/2;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .t19{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .t20{
+            background-color:white;
+            grid-column:3/4;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .t21{
+            background-color:white;
+            grid-column:4/5;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .t22{
+            background-color:white;
+            grid-column:5/6;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .c11{
+            display:inline-grid;
+            grid-template-columns:80px 80px 31px 31px 80px 80px 80px 31px 31px 80px ; 
+            grid-template-rows:repeat(9,66px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .v1{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .v2{
+            background-color:white;
+            grid-column:2/6;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .v3{
+            background-color:yellow;
+            grid-column:6/7;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .v4{
+            background-color:white;
+            grid-column:7/8;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .v5{
+            background-color:white;
+            grid-column:8/10;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .v6{
+            background-color:white;
+            grid-column:10/11;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .v7{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:2/3;
+            border:2px solid black;
+        }
+        .v8{
+            background-color:white;
+            grid-column:2/6;
+            grid-row:2/3;
+            border:2px solid black;
+        }
+        .v9{
+            background-color:white;
+            grid-column:6/7;
+            grid-row:2/3;
+            border:2px solid black;
+        }
+        .v10{
+            background-color:blue;
+            grid-column:7/11;
+            grid-row:2/3;
+            border:2px solid black;
+        }
+        .v11{
+            background-color:red;
+            grid-column:1/2;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+       
+        .v12{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .v13{
+            background-color:white;
+            grid-column:3/5;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .v14{
+            background-color:white;
+            grid-column:5/6;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .v15{
+            background-color:white;
+            grid-column:6/7;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .v16{
+            background-color:white;
+            grid-column:7/11;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .v17{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .v18{
+            background-color:yellow;
+            grid-column:2/6;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .v19{
+            background-color:yellow;
+            grid-column:6/7;
+            grid-row:4/5;
+            border:2px solid black;
+        }
+        .v20{
+            background-color:yellow;
+            grid-column:6/7;
+            grid-row:5/6;
+            border:2px solid black;
+        }
+        .v21{
+            background-color:white;
+            grid-column:7/11;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .v22{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:6/9;
+            border:2px solid black;
+        }
+        .v23{
+            background-color:white;
+            grid-column:2/4;
+            grid-row:6/9;
+            border:2px solid black;
+        }
+        .v24{
+            background-color:white;
+            grid-column:4/6;
+            grid-row:6/9;
+            border:2px solid black;
+        }
+        .v25{
+            background-color:white;
+            grid-column:6/7;
+            grid-row:6/9;
+            border:2px solid black;
+        }
+        .v26{
+            background-color:white;
+            grid-column:7/9;
+            grid-row:6/9;
+            border:2px solid black;
+        }
+        .v27{
+            background-color:white;
+            grid-column:9/11;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .v28{
+            background-color:white;
+            grid-column:7/9;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .v29{
+            background-color:white;
+            grid-column:9/11;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+        .v30{
+            background-color:white;
+            grid-column:7/9;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+        .v31{
+            background-color:white;
+            grid-column:9/11;
+            grid-row:8/9;
+            border:2px solid black;
+        }
+        .v32{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:9/10;
+            border:2px solid black;
+        }
+        .v33{
+            background-color:red;
+            grid-column:2/6;
+            grid-row:9/10;
+            border:2px solid black;
+        }
+        .v34{
+            background-color:white;
+            grid-column:6/7;
+            grid-row:9/10;
+            border:2px solid black;
+        }
+        .v35{
+            background-color:white;
+            grid-column:7/11;
+            grid-row:9/10;
+            border:2px solid black;
+        }
+        .c12{
+            display:inline-grid;
+            grid-template-columns:62px 62px 62px 20px 20px 62px 62px 62px 62px 62px 62px ; 
+            grid-template-rows:repeat(7,85px);
+            background-color:black;
+            font-size: 0.9em;
+            border: 2px solid black;
+        }
+        .y1{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y2{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y3{
+            background-color:white;
+            grid-column:3/4;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y4{
+            background-color:white;
+            grid-column:4/6;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y5{
+            background-color:red;
+            grid-column:6/7;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y6{
+            background-color:white;
+            grid-column:7/8;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y7{
+            background-color:white;
+            grid-column:8/11;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y8{
+            background-color:white;
+            grid-column:11/12;
+            grid-row:1/2;
+            border:2px solid black;
+        }
+        .y9{
+            background-color:blue;
+            grid-column:1/2;
+            grid-row:2/4;
+            border:2px solid black;
+        }
+        .y10{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:2/4;
+            border:2px solid black;
+        }
+        .y11{
+            background-color:white;
+            grid-column:3/7;
+            grid-row:2/4;
+            border:2px solid black;
+        }
+        .y12{
+            background-color:white;
+            grid-column:7/8;
+            grid-row:2/4;
+            border:2px solid black;
+        }
+        .y13{
+            background-color:white;
+            grid-column:8/11;
+            grid-row:2/3;
+            border:2px solid black;
+        }
+        .y14{
+            background-color:white;
+            grid-column:8/11;
+            grid-row:3/4;
+            border:2px solid black;
+        }
+        .y15{
+            background-color:white;
+            grid-column:11/12;
+            grid-row:2/4;
+            border:2px solid black;
+        }
+        .y16{
+            background-color:blue;
+            grid-column:1/2;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y17{
+            background-color:white;
+            grid-column:2/3;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y18{
+            background-color:white;
+            grid-column:3/5;
+            grid-row:4/5;
+            border:2px solid black;
+        }
+        .y19{
+            background-color:white;
+            grid-column:5/7;
+            grid-row:4/5;
+            border:2px solid black;
+        }
+        .y20{
+            background-color:red;
+            grid-column:3/5;
+            grid-row:5/6;
+            border:2px solid black;
+        }
+        .y21{
+            background-color:white;
+            grid-column:5/7;
+            grid-row:5/6;
+            border:2px solid black;
+        }
+        .y22{
+            background-color:blue;
+            grid-column:7/8;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y23{
+            background-color:red;
+            grid-column:8/9;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y24{
+            background-color:white;
+            grid-column:9/10;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y25{
+            background-color:white;
+            grid-column:10/11;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y26{
+            background-color:yellow;
+            grid-column:11/12;
+            grid-row:4/6;
+            border:2px solid black;
+        }
+        .y27{
+            background-color:white;
+            grid-column:1/2;
+            grid-row:6/8;
+            border:2px solid black;
+        }
+        .y28{
+            background-color:red;
+            grid-column:2/3;
+            grid-row:6/8;
+            border:2px solid black;
+        }
+        .y29{
+            background-color:white;
+            grid-column:3/7;
+            grid-row:6/8;
+            border:2px solid black;
+        }
+        .y30{
+            background-color:white;
+            grid-column:7/8;
+            grid-row:6/8;
+            border:2px solid black;
+        }
+        .y31{
+            background-color:white;
+            grid-column:8/11;
+            grid-row:6/8;
+            border:2px solid black;
+        }
+        .y32{
+            background-color:white;
+            grid-column:11/12;
+            grid-row:6/7;
+            border:2px solid black;
+        }
+        .y33{
+            background-color:white;
+            grid-column:11/12;
+            grid-row:7/8;
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="c1">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+            <div class="div4"></div>
+            <div class="div5"></div>
+            <div class="div6"></div>
+            <div class="div7"></div>
+            <div class="div8"></div>
+            <div class="div9"></div>
+            <div class="div10"></div>
+            <div class="div11"></div>
+            <div class="div12"></div>
+            <div class="div13"></div>
+            <div class="div14"></div>
+            <div class="div15"></div>
+            <div class="div16"></div>
+            <div class="div17"></div>
+            <div class="div18"></div>
+            <div class="div19"></div>
+            <div class="div20"></div>
+            <div class="div21"></div>
+            <div class="div22"></div>
+            <div class="div23"></div>
+            <div class="div24"></div>
+            <div class="div25"></div>
+            <div class="div26"></div>
+            <div class="div27"></div>
+        </div>
+        <div class="c2">
+            <div class="d1"></div>
+            <div class="d2"></div>
+            <div class="d3"></div>
+            <div class="d4"></div>
+            <div class="d5"></div>
+            <div class="d6"></div>
+            <div class="d7"></div>
+            <div class="d8"></div>
+            <div class="d9"></div>
+            <div class="d10"></div>
+            <div class="d11"></div>
+            <div class="d12"></div>
+            <div class="d13"></div>
+            <div class="d14"></div>
+            <div class="d15"></div>
+            <div class="d16"></div>
+            <div class="d17"></div>
+            <div class="d18"></div>
+            <div class="d19"></div>
+            <div class="d20"></div>
+            <div class="d21"></div>
+            <div class="d22"></div>
+            <div class="d23"></div>
+            <div class="d24"></div>
+            <div class="d25"></div>
+            <div class="d26"></div>
+            <div class="d27"></div>
+            <div class="d28"></div>
+            <div class="d29"></div>
+            <div class="d30"></div>
+            <div class="d31"></div>
+            <div class="d32"></div>
+            <div class="d33"></div>
+            <div class="d34"></div>
+            <div class="d35"></div>
+            <div class="d36"></div>
+            <div class="d37"></div>
+            <div class="d38"></div>
+            <div class="d39"></div>
+            <div class="d40"></div>
+            <div class="d41"></div>
+            <div class="d42"></div>
+            <div class="d43"></div>
+            <div class="d44"></div>
+            <div class="d45"></div>
+            <div class="d46"></div>
+            <div class="d47"></div>
+            <div class="d48"></div>
+            <div class="d49"></div>
+            <div class="d50"></div>
+        </div>
+        <div class="c3">
+            <div class="m1"></div>
+            <div class="m2"></div>
+            <div class="m3"></div>
+            <div class="m4"></div>
+            <div class="m5"></div>
+            <div class="m6"></div>
+            <div class="m7"></div>
+            <div class="m8"></div>
+            <div class="m9"></div>
+            <div class="m10"></div>
+            <div class="m11"></div>
+            <div class="m12"></div>
+            <div class="m13"></div>
+            <div class="m14"></div>
+            <div class="m15"></div>
+            <div class="m16"></div>
+            <div class="m17"></div>
+            <div class="m18"></div>
+            <div class="m19"></div>
+            <div class="m20"></div>
+            <div class="m21"></div>
+            <div class="m22"></div>
+            <div class="m23"></div>
+            <div class="m24"></div>
+            <div class="m25"></div>
+            <div class="m26"></div>
+            <div class="m27"></div>
+            <div class="m28"></div>
+            <div class="m29"></div>
+            <div class="m30"></div>
+            <div class="m31"></div>
+            <div class="m32"></div>
+        </div>
+        <div class="c4">
+            <div class="n1"></div>
+            <div class="n2"></div>
+            <div class="n3"></div>
+            <div class="n4"></div>
+            <div class="n5"></div>
+            <div class="n6"></div>
+            <div class="n7"></div>
+            <div class="n8"></div>
+            <div class="n9"></div>
+            <div class="n10"></div>
+            <div class="n11"></div>
+            <div class="n12"></div>
+            <div class="n13"></div>
+            <div class="n14"></div>
+            <div class="n15"></div>
+            <div class="n16"></div>
+            <div class="n17"></div>
+            <div class="n18"></div>
+            <div class="n19"></div>
+            <div class="n20"></div>
+            <div class="n21"></div>
+            <div class="n22"></div>
+            <div class="n23"></div>
+            <div class="n24"></div>
+            <div class="n25"></div>
+            <div class="n26"></div>
+            <div class="n27"></div>
+            <div class="n28"></div>
+            <div class="n29"></div>
+            <div class="n30"></div>
+            <div class="n31"></div>
+            <div class="n32"></div>
+        </div>
+        <div class="c5">
+            <div class="o1"></div>
+            <div class="o2"></div>
+            <div class="o3"></div>
+            <div class="o4"></div>
+            <div class="o5"></div>
+            <div class="o6"></div>
+            <div class="o7"></div>
+            <div class="o8"></div>
+            <div class="o9"></div>
+            <div class="o10"></div>
+            <div class="o11"></div>
+            <div class="o12"></div>
+            <div class="o13"></div>
+            <div class="o14"></div>
+            <div class="o15"></div>
+            <div class="o16"></div>
+            <div class="o17"></div>
+            <div class="o18"></div>
+            <div class="o19"></div>
+            <div class="o20"></div>
+            <div class="o21"></div>
+            <div class="o22"></div>
+            <div class="o23"></div>
+            <div class="o24"></div>
+            <div class="o25"></div>
+            <div class="o26"></div>
+            <div class="o27"></div>
+            <div class="o28"></div>
+            <div class="o29"></div>
+            <div class="o30"></div>
+            <div class="o31"></div>
+            <div class="o32"></div>
+            <div class="o33"></div>
+            <div class="o34"></div>
+            <div class="o35"></div>
+            <div class="o36"></div>
+            <div class="o37"></div>
+            <div class="o38"></div>
+            <div class="o39"></div>
+            <div class="o40"></div>
+            <div class="o41"></div>
+            <div class="o42"></div>
+            <div class="o43"></div>
+            <div class="o44"></div>
+            <div class="o45"></div>
+            <div class="o46"></div>
+            <div class="o47"></div>
+            <div class="o48"></div>
+            <div class="o49"></div>
+            <div class="o50"></div>
+        </div>
+        <div class="c6">
+            <div class="p1"></div>
+            <div class="p2"></div>
+            <div class="p3"></div>
+            <div class="p4"></div>
+            <div class="p5"></div>
+            <div class="p6"></div>
+            <div class="p7"></div>
+            <div class="p8"></div>
+            <div class="p9"></div>
+            <div class="p10"></div>
+            <div class="p11"></div>
+            <div class="p12"></div>
+            <div class="p13"></div>
+            <div class="p14"></div>
+            <div class="p15"></div>
+            <div class="p16"></div>
+            <div class="p17"></div>
+            <div class="p18"></div>
+            <div class="p19"></div>
+            <div class="p20"></div>
+            <div class="p21"></div>
+            <div class="p22"></div>
+            <div class="p23"></div>
+            <div class="p24"></div>
+            <div class="p25"></div>
+            <div class="p26"></div>
+            <div class="p27"></div>
+            <div class="p28"></div>
+            <div class="p29"></div>
+            <div class="p30"></div>
+            <div class="p31"></div>
+            <div class="p32"></div>
+            <div class="p33"></div>
+            <div class="p34"></div>
+            <div class="p35"></div>
+            <div class="p36"></div>
+        </div>
+        <div class="c7">
+            <div class="q1"></div>
+            <div class="q2"></div>
+            <div class="q3"></div>
+            <div class="q4"></div>
+            <div class="q5"></div>
+            <div class="q6"></div>
+            <div class="q7"></div>
+            <div class="q8"></div>
+            <div class="q9"></div>
+            <div class="q10"></div>
+            <div class="q11"></div>
+            <div class="q12"></div>
+            <div class="q13"></div>
+            <div class="q14"></div>
+            <div class="q15"></div>
+            <div class="q16"></div>
+            <div class="q17"></div>
+            <div class="q18"></div>
+            <div class="q19"></div>
+            <div class="q20"></div>
+            <div class="q21"></div>
+            <div class="q22"></div>
+            <div class="q23"></div>
+            <div class="q24"></div>
+            <div class="q25"></div>
+            <div class="q26"></div>
+            <div class="q27"></div>
+            <div class="q28"></div>
+            <div class="q29"></div>
+            <div class="q30"></div>
+            <div class="q31"></div>
+            <div class="q32"></div>
+            <div class="q33"></div>
+            <div class="q34"></div>
+            <div class="q35"></div>
+            <div class="q36"></div>
+            <div class="q37"></div>
+            <div class="q38"></div>
+            <div class="q39"></div>
+            <div class="q40"></div>
+            <div class="q41"></div>
+            <div class="q42"></div>
+        </div>
+        <div class="c8">
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+            <div class="r4"></div>
+            <div class="r5"></div>
+            <div class="r6"></div>
+            <div class="r7"></div>
+            <div class="r8"></div>
+            <div class="r9"></div>
+            <div class="r10"></div>
+            <div class="r11"></div>
+            <div class="r12"></div>
+            <div class="r13"></div>
+            <div class="r14"></div>
+            <div class="r15"></div>
+            <div class="r16"></div>
+            <div class="r17"></div>
+            <div class="r18"></div>
+            <div class="r19"></div>
+            <div class="r20"></div>
+            <div class="r21"></div>
+            <div class="r22"></div>
+            <div class="r23"></div>
+            <div class="r24"></div>
+            <div class="r25"></div>
+            <div class="r26"></div>
+            <div class="r27"></div>
+            <div class="r28"></div>
+            <div class="r29"></div>
+            <div class="r30"></div>
+            <div class="r31"></div>
+            <div class="r32"></div>
+            <div class="r33"></div>
+            <div class="r34"></div>
+            <div class="r35"></div>
+            <div class="r36"></div>
+        </div>
+        <div class="c9">
+            <div class="s1"></div>
+            <div class="s2"></div>
+            <div class="s3"></div>
+            <div class="s4"></div>
+            <div class="s5"></div>
+            <div class="s6"></div>
+            <div class="s7"></div>
+            <div class="s8"></div>
+            <div class="s9"></div>
+            <div class="s10"></div>
+            <div class="s11"></div>
+            <div class="s12"></div>
+            <div class="s13"></div>
+            <div class="s14"></div>
+            <div class="s15"></div>
+            <div class="s16"></div>
+            <div class="s17"></div>
+            <div class="s18"></div>
+            <div class="s19"></div>
+            <div class="s20"></div>
+            <div class="s21"></div>
+            <div class="s22"></div>
+            <div class="s23"></div>
+            <div class="s24"></div>
+            <div class="s25"></div>
+            <div class="s26"></div>
+            <div class="s27"></div>
+            <div class="s28"></div>
+            <div class="s29"></div>
+            <div class="s30"></div>
+            <div class="s31"></div>
+            <div class="s32"></div>
+            <div class="s33"></div>
+        </div>
+        <div class="c10">
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="t3"></div>
+            <div class="t4"></div>
+            <div class="t5"></div>
+            <div class="t6"></div>
+            <div class="t7"></div>
+            <div class="t8"></div>
+            <div class="t9"></div>
+            <div class="t10"></div>
+            <div class="t11"></div>
+            <div class="t12"></div>
+            <div class="t13"></div>
+            <div class="t14"></div>
+            <div class="t15"></div>
+            <div class="t16"></div>
+            <div class="t17"></div>
+            <div class="t18"></div>
+            <div class="t19"></div>
+            <div class="t20"></div>
+            <div class="t21"></div>
+            <div class="t22"></div>
+        </div>
+        <div class="c11">
+            <div class="v1"></div>
+            <div class="v2"></div>
+            <div class="v3"></div>
+            <div class="v4"></div>
+            <div class="v5"></div>
+            <div class="v6"></div>
+            <div class="v7"></div>
+            <div class="v8"></div>
+            <div class="v9"></div>
+            <div class="v10"></div>
+            <div class="v11"></div>
+            <div class="v12"></div>
+            <div class="v13"></div>
+            <div class="v14"></div>
+            <div class="v15"></div>
+            <div class="v16"></div>
+            <div class="v17"></div>
+            <div class="v18"></div>
+            <div class="v19"></div>
+            <div class="v20"></div>
+            <div class="v21"></div>
+            <div class="v22"></div>
+            <div class="v23"></div>
+            <div class="v24"></div>
+            <div class="v25"></div>
+            <div class="v26"></div>
+            <div class="v27"></div>
+            <div class="v28"></div>
+            <div class="v29"></div>
+            <div class="v30"></div>
+            <div class="v31"></div>
+            <div class="v32"></div>
+            <div class="v33"></div>
+            <div class="v34"></div>
+            <div class="v35"></div>
+        </div>
+        <div class="c12">
+            <div class="y1"></div>
+            <div class="y2"></div>
+            <div class="y3"></div>
+            <div class="y4"></div>
+            <div class="y5"></div>
+            <div class="y6"></div>
+            <div class="y7"></div>
+            <div class="y8"></div>
+            <div class="y9"></div>
+            <div class="y10"></div>
+            <div class="y11"></div>
+            <div class="y12"></div>
+            <div class="y13"></div>
+            <div class="y14"></div>
+            <div class="y15"></div>
+            <div class="y16"></div>
+            <div class="y17"></div>
+            <div class="y18"></div>
+            <div class="y19"></div>
+            <div class="y20"></div>
+            <div class="y21"></div>
+            <div class="y22"></div>
+            <div class="y23"></div>
+            <div class="y24"></div>
+            <div class="y25"></div>
+            <div class="y26"></div>
+            <div class="y27"></div>
+            <div class="y28"></div>
+            <div class="y29"></div>
+            <div class="y30"></div>
+            <div class="y31"></div>
+            <div class="y32"></div>
+            <div class="y33"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .choices {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 3rem;
+        margin-top: 50px;
+
+        #seven-up,
+        #seven,
+        #seven-down {
+          height: 200px;
+          width: 200px;
+          color: white;
+          background-color: red;
+          border: 1px solid black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .inputs {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        input {
+          height: 20px;
+          width: 220px;
+        }
+      }
+      .images {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 15px;
+      }
+      #head {
+        height: 50px;
+        width: 100%;
+        /* margin-top: 250px; */
+        margin-top: 5px;
+        background-color: black;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="choices">
+        <div id="seven-up">7 Up</div>
+        <div id="seven">7</div>
+        <div id="seven-down">7 Down</div>
+      </div>
+      <div class="inputs">
+        <input type="text" id="in" placeholder="Enter the bet" />
+        <button onclick="roll()">Start The Game</button>
+      </div>
+
+      <div class="images">
+        <img src="" alt="" id="img1" />
+        <img src="" alt="" id="img2" />
+      </div>
+      <h1 id="head"></h1>
+    </div>
+    <script>
+      document.getElementById("seven-up").addEventListener("click", sevenUp);
+      document.getElementById("seven").addEventListener("click", seven);
+      document.getElementById("seven-down").addEventListener("click", sevenDown);
+      let choices = "";
+      function sevenUp() {
+        choices = "7up";
+        document.getElementById("seven").style.display = "none";
+        document.getElementById("seven-down").style.display = "none";
+        document.getElementById("seven-up").style.display = "block";
+      }
+      function seven() {
+        choices = "7";
+        document.getElementById("seven").style.display = "block";
+        document.getElementById("seven-down").style.display = "none";
+        document.getElementById("seven-up").style.display = "none";
+      }
+      function sevenDown() {
+        choices = "7down";
+        document.getElementById("seven").style.display = "none";
+        document.getElementById("seven-down").style.display = "block";
+        document.getElementById("seven-up").style.display = "none";
+      }
+
+      function roll() {
+        let l = [1, 2, 3, 4, 5, 6];
+        let r1 = Math.floor(Math.random() * 6);
+        let r2 = Math.floor(Math.random() * 6);
+        let d1 = l[r1];
+        let d2 = l[r2];
+        let balance = 0;
+        let inputVal = document.getElementById("in").value;
+        let i1 = document.getElementById("img1");
+        i1.setAttribute("src", `d-${d1}.jpg`);
+        let i2 = document.getElementById("img2");
+        i2.setAttribute("src", `d-${d2}.jpg`);
+        if (d1 + d2 == 7 && choices == "7") {
+          document.getElementById("head").innerHTML = `You Won Exact 7 Balance is${(balance += inputVal * 3)}`;
+          document.getElementById("seven-up").style.display = "block";
+          document.getElementById("seven-down").style.display = "block";
+        } else if (d1 + d2 < 7 && choices == "7down") {
+          document.getElementById("head").innerHTML = `You Won Exact 7down Balance is${(balance += inputVal * 2)}`;
+          document.getElementById("seven-up").style.display = "block";
+          document.getElementById("seven").style.display = "block";
+        } else if (d1 + d2 > 7 && choices == "7up") {
+          document.getElementById("head").innerHTML =` You Won Exact 7up Balance is${(balance += inputVal * 2)}`;
+          document.getElementById("seven-down").style.display = "block";
+          document.getElementById("seven").style.display = "block";
+        } else {
+          document.getElementById("head").innerHTML = `You Lost Balance is${(balance -= inputVal)}`;
+          document.getElementById("seven-up").style.display = "block";
+          document.getElementById("seven").style.display = "block";
+          document.getElementById("seven-down").style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

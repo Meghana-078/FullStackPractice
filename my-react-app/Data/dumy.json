@@ -1,0 +1,30 @@
+{
+    "Book":[
+            {
+                "id":"1",
+                "image":"/assets/book1.jpeg", 
+                "name":"BookofDoors",
+                "price":"1300"
+            },
+            {
+                "id":"2",
+               "image":"/assets/book2.jpeg",
+               "name":"wishperWicks",
+                "price":"1500"
+            },
+            {
+                "id":"3",
+                "image":"/assets/book3.jpeg",
+               "name":"Anna James",
+               "price":"1100"
+    
+            },
+            {
+                "id":"4",
+               "image":"/assets/book4.jpeg",
+               "name":"Vanishing BookStore",
+               "price":"7500"
+    
+            }
+    ]
+}

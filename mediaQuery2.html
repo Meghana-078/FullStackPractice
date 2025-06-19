@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .head{
+            background-color: skyblue;
+            height:60px;
+            width: 100%;
+        }
+        .bs ,.tab,.lap{
+            display:none;
+        }
+        @media screen and (max-width:1200px){
+            .head{
+                background-color:skyblue;
+            }
+            .bg{
+                display: block;
+            }
+            .tab{
+                display:none;
+            }
+            .lap{
+                display:none
+            }
+        }
+        @media screen and (max-width:900px){
+            .head{
+                background-color: yellow;
+            }
+            .tab{
+                display:block;
+            }
+            .bg{
+                display: none;
+            }
+            .lap{
+                display: none;
+            }
+        }
+        @media screen and (max-width:600px){
+            .head{
+                background-color: red;
+            }
+            .lap{
+                display:block;
+            }
+            .bg{
+                display:none;
+            }
+            .tab{
+                display:none
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1 class="bg">Big Screen</h1>
+        <h1 class="tab">Tablet</h1>
+        <h1 class="lap">Laptop</h1>
+    </div>
+    <div class="head"></div>
+</body>
+</html>

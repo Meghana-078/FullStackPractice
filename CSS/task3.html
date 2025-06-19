@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 150px;
+        }
+        .head{
+            width:30px;
+            height:50px;
+            border-top-left-radius:50% ;
+            border-bottom-left-radius: 25%;
+            background-color: blue;
+        }
+        .body{
+            width:500px;
+            height:50px;
+            background-color: yellow;
+            position: relative;
+            left:30px;
+        }
+        .wheel{
+            width:20px;
+            height:20px;
+            background-color: green;
+            border-radius: 50%;
+            position: relative;
+            left:50px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="body">
+            <div class="wheel"></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Minnie</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fceff9, #f9f5fc);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .head {
+      background: linear-gradient(135deg, #d291bc, #957dad);
+      color: #fff;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      animation: floatText 3s ease-in-out infinite alternate;
+    }
+
+    .calendar-container {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .calendar {
+      width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .calendar:hover {
+      transform: scale(1.03);
+    }
+
+    .highlight {
+      position: absolute;
+      top: 60px;  /* adjust to match your 7th date */
+      left: 70px;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #ff6f91;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .message {
+      font-size: 22px;
+      color: #555;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .message.show {
+      opacity: 1;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .image-grid img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes floatText {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="head">Happy Birthday Minnie 🎉</div>
+
+  <div class="calendar-container">
+    <img src="/may.jpeg" alt="May Calendar" class="calendar" onclick="showMessage()">
+    <div class="highlight"></div>
+  </div>
+
+  <div id="birthdayMessage" class="message">
+    🎉 Today is my sister’s birthday! 🎉 <br>
+    Minnie, you are the sweetest light in our lives. 💕 <br>
+    Wishing you a day full of magic, laughter, and joy! ✨🎂🌷
+  </div>
+
+  <!-- Pinterest-inspired Birthday Images -->
+  <div class="image-grid">
+    <!-- Cake Images from Pinterest -->
+    <img src="https://i.pinimg.com/originals/fe/0c/44/fe0c44f0d8b22b937fa8c4a56a9719d1.jpg" alt="Birthday Cake 1">
+    <img src="https://i.pinimg.com/originals/2c/68/2f/2c682f6c50d96f174fb4a18b1b3c1c89.jpg" alt="Birthday Cake 2">
+    <img src="https://i.pinimg.com/originals/7e/a3/7d/7ea37d56b9b0bfe89f75e71078fc37b6.jpg" alt="Birthday Cake 3">
+    <img src="https://i.pinimg.com/originals/39/99/18/399918d43e71e12b8e59bb6e41fa9b07.jpg" alt="Birthday Cake 4">
+
+    <!-- Decoration Ideas from Pinterest -->
+    <img src="https://i.pinimg.com/originals/d0/62/82/d06282e43a40c0f28d38aefb7d82ec97.jpg" alt="Birthday Decoration 1">
+    <img src="https://i.pinimg.com/originals/98/a6/4e/98a64e01792491f6f0a128c37e404e85.jpg" alt="Birthday Decoration 2">
+    <img src="https://i.pinimg.com/originals/f8/9a/27/f89a27d66a40dfe82d6aaf5ca33e2e66.jpg" alt="Birthday Decoration 3">
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('birthdayMessage').classList.add('show');
+    }
+  </script>
+</body>
+</html>

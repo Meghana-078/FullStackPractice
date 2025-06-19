@@ -1,0 +1,34 @@
+p{
+    color: skyblue;
+}
+p[class]{
+    color: red;
+}
+a:active{
+    color: yellow;
+}
+a:visited{
+    color: brown;
+}
+a:link{
+    color: skyblue;
+}
+a:hover{
+    color: violet;
+}
+p[class^='m']{
+    color:blue;
+}
+p[class$='a']{
+    color:purple;
+}
+p[class*="a"]{
+    color: blue;
+}
+h1{
+    color: blue;
+    text-transform: capitalize;
+    text-decoration: underline;
+    letter-spacing: normal;
+    text-align: center;
+}

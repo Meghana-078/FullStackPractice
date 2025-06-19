@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background:url('/assets/random.jpg');
+    }
+    #imageBox {
+      width: 70%;
+      height: 1400px;;
+      margin: auto;
+      border: 10px solid #333;
+      opacity: 0.6;
+      border-radius: 50px ;
+      background-color: rgb(153, 118, 118);
+      background-size: cover;
+      background-position: center;
+    }
+    #colorBtn {
+      cursor: pointer; 
+      margin-top: 20px;
+      padding: 40px 40px;
+      font-size: 50px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    h1{
+        font-size: 60px;
+       font-weight: bolder;
+
+    }
+#colorCode {
+  font-size: 60px;
+}
+    
+    #colorCode {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+   
+  </style>
+</head>
+<body>
+
+  <h1>Random Color Generator</h1>
+  <div id="imageBox" style="background-image: url('https://via.placeholder.com/250');"></div>
+  
+  <button id="colorBtn">Click here to change </button>
+  <div id="colorCode">#333333</div>
+  
+
+
+  <script>
+    const imageBox = document.getElementById("imageBox");
+    const colorCode = document.getElementById("colorCode");
+    const button = document.getElementById("colorBtn");
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    button.onclick = function () {
+      const newColor = getRandomColor();
+      imageBox.style.background = newColor;
+      colorCode.textContent = newColor;
+    };
+  </script>
+
+</body>
+</html>

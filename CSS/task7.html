@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    .container{
+        width:1200px;
+        height:650px;
+        border: 2px solid black;
+        border-radius: 20px;
+    }
+    .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8{
+        width:250px;
+        height:200px;
+        border: 1px solid black;
+        border-radius:20%;
+    }
+    .con{
+        display: grid;
+        grid-template-columns:270px 270px 270px 270px;
+    }
+    ul{
+        display: flex;
+        justify-content:flex-start;
+        gap:30px;
+    }
+    li{
+        list-style: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <button class="text-dark border m-2 p-2 border-dark rounded">Crextio</button> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+        <div class="btn-group">
+            <button class="btn btn-dark border-dark rounded">Dashboard</button>
+            <button class="btn btn-light rounded">People</button>
+            <button class="btn btn-light rounded">Hiring</button>
+            <button class="btn btn-light rounded">Devices</button>
+            <button class="btn btn-light rounded">Apps</button>
+            <button class="btn btn-light rounded">Salary</button>
+            <button class="btn btn-light rounded">Calender</button>
+            <button class="btn btn-light rounded">Reviews</button>
+        </div>
+        <button class="btn-light  border-light rounded "><i class="bi bi-gear">Settings</i></button>&emsp;
+        <i class="bi bi-bell"></i>&emsp;
+        <i class="bi bi-person"></i>
+        <br><br><br>
+        <h4>Welcome in,Nixtio</h4>
+        <ul>
+            <li>Interviews<br> <button class="btn btn-dark rounded-pill"style="width:80px">75%</button></li>
+            <li>Hired<br>  <button class="btn btn-warning rounded-pill"style="width:80px">15%</button></li>
+            <li>Project Time</li>
+            <li>Output</li>
+        </ul>
+        <div class="con">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+            <div class="c6"></div>
+            <div class="c7"></div>
+            <div class="c8"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

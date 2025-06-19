@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url('/netflix.jpg');
+            background-repeat:no-repeat ;
+            background-size: cover;
+        }
+        .container{
+            width:400px;
+            height: 450px;
+            background-color:rgb(14, 13, 13);
+            box-sizing: border-box;
+            margin-top: 75px;
+            margin-left: 500px;
+            padding: 5px;
+            text-align: center;
+            color: antiquewhite;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        p{
+            color: whitesmoke;
+        }
+        .input{
+            width: 65%;
+            font-size: 20px;
+            color: gray;
+            margin-top: 20px;
+            padding: 5px;
+        }
+        button{
+            text-align:center;
+            margin-left:10px;
+            margin-top:5px;
+            height:50px;
+            width:300px;
+            font-size:1em;
+            background-color: red;
+            color: wheat;
+            border:none;
+            border-radius: 5px;
+        }
+        a:link{
+            color: beige;
+            text-decoration: underline;
+        }
+        .b{
+            opacity:1;
+        }
+    </style>
+</head>
+<body>
+    <image class="b" src="/n.jpg" width="170" height="85"></image>
+    <div class="container">
+        <form action="">
+        <label><h2><b>Sign In</b></h2></label>
+        <div>
+        <input class="input" type="mail" name="Email" id="email" placeholder="Email">
+    </div>
+        <br>
+    <div>
+        <input class="input" type="password" name="password" id="password" placeholder="Password">
+    </div>
+        <br>
+        <button type="submit" width="200">Sign In</button>
+        <br>
+        <input type="checkbox" name="Remember me" id="Remember me">
+        <label for="Remember me">Remember me</label>
+        <br><br><br>
+        <label>New to Netflix?</label><a href="https://www.netflix.com/signup"><b>Sign Up</b></a>
+
+        <p>This Page is Protected by Google reCATCHA to ensure you're not a bot.</p><a href="https://about.netflix.com/en">Learn more</a>
+    </form>
+    </div>
+</body>
+</html>

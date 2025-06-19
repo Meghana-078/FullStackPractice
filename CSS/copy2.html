@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIBBLE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: black;
+            overflow-x:hidden
+            
+            ;
+        }
+        .main{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .layout{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(180deg, rgb(233, 226, 226),rgba(146, 165, 38, 0.705) 80%,rgb(216, 172, 26)) !important;
+        }
+        .navbar12{
+            position: absolute;
+            left: 480px;
+            top: 15px;
+            background-color: white;
+            height: 40px;
+            width: 650px;
+            border-radius: 30px;
+            button{
+                border: none;
+                background:none ;
+                padding-left: 15px;
+                padding-right: 15px;
+                    font-size: 15px;
+                    height:40px;
+                    border-radius: 30px;
+            }
+            button:first-child{
+                background-color: rgba(0, 0, 0, 0.836);
+                color: white;
+            }
+            
+        button:hover{
+            background-color: rgba(0, 0, 0, 0.836);
+            color: white;
+        }}
+            .navbar11{
+                border: 2px solid black;
+                border-radius: 30px;
+                position: absolute;
+                top: 15px;
+                left: 50px;
+                font-weight: 550;
+                height: 45px;
+                width: 95px;
+                font-size: 20px;
+                background: none;
+            }
+            .navbar11:hover{
+                background-color: rgba(0, 0, 0, 0.774);
+                color: white;
+            }
+        
+        .navbar2{
+            position: absolute;
+            top: 15px;
+            height: 40px;
+            width: 70px;
+            right: 200px;
+            .navbar21{
+                background-color: white;
+                border-radius: 30px;
+                height:40px ;
+                width: 95px;
+                font-size: 15px;
+                padding-left: 15px;
+                padding-top: 0px;
+                border: none;
+                position: absolute;
+                left: 50px;
+           }
+           .navbar22,.navbar23{
+            background-color: white;
+            position: absolute;
+            border-radius: 50%;
+            height: 40px;
+            width: 38px;
+            border: none;
+           }
+           .navbar22{
+            top: 0px;
+            left: 205px;
+           }
+           .navbar23{
+            top: 0px;
+            left: 155px;
+           }
+        }
+        .middle{
+            position: absolute;
+            width: 100vw;
+            height: 380px;
+            left: 25px;
+            right: 25px;
+            top: 240px;
+            display: grid;
+            grid-template-columns: repeat(4,325px);
+            grid-template-rows: repeat(2,190px);
+            gap: 5px;
+            .middle1,.middle2,.middle3,.middle4,.middle5{
+                border-radius: 30px;
+            }
+            .middle1{
+                background-color: white;
+                grid-column: 1/2;
+                grid-row: 1/2;
+                .m1txt,.m12{
+
+                    position: absolute;
+                }
+                .m1txt{
+                    font-size: 15px;
+                    left: 20px;
+                    width: 140px;
+                    height:50px;
+                    background-color: rgba(255, 255, 255, 0.363);
+                        color: black;
+                        top: 130px;
+                        box-shadow: solid white;
+                        box-shadow: 5px 5px 50px 10px rgba(255, 255, 255, 0.733);
+
+                    span{
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    
+                }
+                .m12{
+                    left: 210px;
+                    height: 25px;
+                    padding-left: 10px;
+                    padding-top: 8px;
+                    width: 60px;
+                    top: 140px;
+                    border: 1px solid white;
+                    background-color: rgba(255, 255, 255, 0.377);
+                    border-radius: 30px;
+                }
+            }
+            .middle6{
+                background-color:rgba(255, 255, 255, 0.336);
+                grid-column: 2/3;
+                grid-row: 1/2;
+                border-radius: 20px;
+                .m212,.m213,.m214,.m215,.m216,.m217,.m218{
+                    height: 7px;
+                    width: 7px;
+                    border-radius: 50%;
+                    background-color: black;
+                }
+                .m211,.m210,.m29,.m28,.m27,.m26,.m25{
+                    width: 7px;
+                    height: 30px;
+                    position: absolute;
+                    border-radius: 50%;
+                    background-color: black;
+                    border-radius: 5px;
+                }
+                .m21{
+                    position: absolute;
+                    top: 10px;
+                    left: 340px;
+                    font-size: 20px;
+                }
+                .m22{
+                    position: absolute;
+                    top: 40px;
+                    font-size: 30px;
+                    left: 340px;
+                }
+                .m23{
+                    position: absolute;
+                    top: 47px;
+                    left: 410px;
+                    font-size: 12px;
+                }.m24{
+                    position: absolute;
+                    height: 30px;
+                    width: 30px;
+                    background-color: white;
+                    border-radius: 50%;
+                    left: 615px;
+                    top: 3px;
+                }
+                .m219{
+                    position: absolute;
+                    top: 37px;
+                    left: 550px;
+                    border: 0.5px solid black;
+                    padding: 4px;
+                    font-size: 13px;
+                    border-radius: 30px;
+                }
+                .cd{
+                    display: flex;
+                    gap: 33px;
+                    left: 345px;
+                    position: absolute;
+                    top: 110px;
+                }
+                .m218{
+                    background-color: orange;
+                }
+                .m25,.m212 {
+                    background-color: grey;
+                }
+                .m26{
+                    height: 55px;
+                    left: 40px;
+                    top:-25px;
+                }
+                .m27{
+                    height: 48px;
+                    left: 80px;
+                    top:-16px;
+                }
+                .m28{
+                    height: 38px;
+                    left: 120px;
+                    top:-6px;
+                }
+                .m29{
+                    height: 28px;
+                    left: 160px;
+                    top: 5px;
+                    background-color: gray;
+                }
+                .m210{
+                    height: 58px;
+                    left: 200px;
+                    top:-25px;
+                }
+                .m211{
+                    height: 75px;
+                    left: 240px;
+                    top:-40px;
+                    background-color: orange;
+                }
+                .cw{
+                    display: flex;
+                    position: absolute;
+                    left: 345px;
+                    top: 147px;
+                    gap: 33px;
+                        width: 300px;
+                    height: 10px;
+                }
+                .m220{
+                    position: absolute;
+                    top: 165px;
+                    left: 345px;
+                    font-size: 15px;
+                }
+            }
+            .middle3{
+                background-color: rgba(255, 255, 255, 0.363);
+                grid-column: 3/4;
+                grid-row: 1/2;
+                .m31{
+                    background-color: orange;
+                    width: 130px;
+                    height: 130px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 40px;
+                    right: 490px;
+                }
+                .m32{
+                    background-color: white;
+                    width: 110px;
+                    height: 110px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 49px;
+                    right: 500px;
+                    text-align: center;
+                    span{
+                        margin-top: 300px;
+                    }
+                }
+                .m33{
+                    position: absolute;
+                    top: 15px;
+                    left: 670px;
+                    font-size: 20px;
+                }
+                .m34{position: absolute;
+                    height: 30px;
+                    width: 30px;
+                    background-color: white;
+                    border-radius: 50%;
+                    left: 945px;
+                    top: 3px;}
+                    .m35{
+                        height: 30px;
+                    width: 30px;
+                    background-color: white;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 670px;
+                    top: 145px;
+                    }
+                    .m36{
+                        height: 30px;
+                    width: 30px;
+                    position: absolute;
+                    background-color: white;
+                    border-radius: 50%;
+                    right: 630px;
+                    top: 145px;
+                    }
+                    .m37{
+                        
+                        height: 30px;
+                    width: 30px;
+                    background-color: black;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 410px;
+                    top: 145px;
+                    }
+                    
+                    }
+            
+            .middle4{
+                background-color: rgba(255, 255, 255, 0.363);
+                grid-column: 4/5;
+                grid-row: 1/3;
+                .m61,.m62,.m63,.m64,.m65,.m66,.m67,.m68,.m69{
+                    position: absolute;
+                    top: 500px;
+                }
+                .m61{
+                    top: 15px;
+                    right: 270px;
+                    font-size: 20px;
+                }
+                .m62{
+                    top: 10px;
+                    right: 70px;
+                    font-size: 27px;
+                }
+                .m63{
+                    top: 55px;
+                    right: 150px;
+                }
+                .m64{
+                    top: 80px;
+                    right: 200px;
+                    width: 100px;
+                    height: 300px;
+                    .m641,.m642,.m643{
+                        position: absolute;
+                        height: 25px;
+                        width: 30px;
+                        border: 2ps solid red;
+                        border-radius: 10px;
+                        top: -5px;
+                    }
+                    
+                    .m641{
+                        background-color: orange;
+                        right: 70px;
+                        top: -5px;
+                        width: 95px;
+                    }   
+                    .m642{
+                        background-color: rgba(0, 0, 0, 0.692);
+                        left:35px;
+                        top: -5px;
+                        width: 80px;
+                    }    
+                    .m643{
+                        background-color: rgba(128, 128, 128, 0.774);
+                        left: 120px;
+                        top: -5px;
+                        width: 60px;
+                    }    
+                }
+                .m65{
+                    width: 200px;
+                    height: 100px;
+                    top: 110px;
+                    background-color: white;
+                    right: 115px;
+                    border-radius: 20px;
+                }
+                .m66{
+                    width: 240px;
+                    height: 100px;
+                    top: 120px;
+                    background-color: gray;
+                    right: 95px;
+                    border-radius: 20px;
+                }
+                .m67{
+                    width: 280px;
+                    height: 250px;
+                    top: 135px;
+                    background-color: rgb(26, 25, 25);
+                    right: 75px;
+                    border-radius: 20px;
+                    .m671,.m672,.m673,.m674,.m675,.m676,.m677{
+                        position: absolute;
+                        color: white;
+                        font-size: 15px;
+                        left: 10px;
+                    }
+                    .m671{
+                        font-size: 20px;
+                        top: 15px;
+                    }
+                    .m672{
+                        top: 5px;
+                        left: 220px;
+                        font-size: 30px;
+                    }
+                    .m673{
+                        top: 70px;
+                    }
+                    .m674{
+                        top: 100px;
+                    }
+                    .m675{
+                        top: 130px;
+                    }
+                    .m676{
+                        top: 160px;
+                    }
+                    .m677{
+                        top: 190px;
+                    }
+
+                }
+                
+            }
+            .middle5{
+                background-color: rgba(255, 255, 255, 0.363);
+                grid-column: 1/2;
+                grid-row: 2/3;
+                .m51,.m52,.m53,.m54{
+                    position: absolute;
+                    left: 10px;
+                    width: 280px;
+                }
+                .m51{
+                    top: 210px;
+                }
+                .m52{
+                    top: 255px;
+                }
+                .m53{
+                    top: 300px;
+                }
+                .m54{
+                    top: 345px;
+                }
+                
+            }
+            .middle2{
+                background-color: rgba(255, 255, 255, 0.363);
+                grid-column: 2/4;
+                grid-row: 2/3;
+                .m41{
+                    position: absolute;
+                    top: 200px;
+                    left: 350px;
+                    width: 60px;
+                    border: 0.5px solid white;
+                    padding: 3px;
+                    border-radius: 30px;
+                    padding-left: 5px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    color: black;
+                }
+                .m42{
+                    position: absolute;
+                    top: 200px;
+                    left: 570px;
+                    width: 150px;
+                    padding: 3px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    border-radius: 30px;
+                    padding-left: 5px;
+                }
+                .m43{
+                    position: absolute;
+                    top: 200px;
+                    left: 860px;
+                    width: 75px;
+                    border: 0.5px solid white;
+                    padding: 3px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    color: black;
+                    border-radius: 30px;
+                    padding-left: 10px;
+                }
+                .m44{
+                    display: flex;
+                    gap: 40px;
+                    position: absolute;
+                    left: 450px;
+                    top: 235px;
+                    font-size: 13px;
+                    width: 600px;
+                }
+                .m45{
+                    position: absolute;
+                    top: 265px;
+                    font-size: 12px;
+                    left: 350px;
+                }
+                .m46{
+                    background-color: rgba(0, 0, 0, 0.74);
+                    width: 180px;
+                    height: 35px;
+                    position: absolute;
+                    border-radius: 30px;
+                    top: 280px;
+                    left: 470px;
+                }
+                .m47{
+                    background-color: rgba(255, 255, 255, 0.596);
+                    width: 180px;
+                    height: 35px;
+                    position: absolute;
+                    border-radius: 30px;
+                    top: 330px;
+                    left: 600px;
+                }
+            }
+        }
+        .topnext{
+            position: absolute;
+            background:none;
+            width: 1000px;
+            top: 90px;
+            height: 110px;
+            left: 50px;
+            .heading{
+                font-size: 50px;
+            }
+            .left{
+                padding-top: 15px;
+                font-weight: 600;
+                padding-left: 20px;
+            }
+            .ld1,.ld2,.ld3,.ld4{
+                width: 40px;
+                bottom: -30px;
+                height: 25
+                px;
+                border-radius: 20px;
+                position: absolute;       
+                padding-top: 10px;    }
+            .ld1{
+                left: 15px;
+                width: 88px;
+                background-color: black;
+                color: white;
+            }
+            .ld2{
+                left: 113px;
+                width: 70px;
+                background-color: orange;
+            }.ld3{
+                left: 193px;
+                width: 200px;
+                fill: dotted;
+                background: linear-gradient(150deg,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey,white,grey);
+            }
+            .ld4{
+                left: 410px;
+                border: 1px solid black;
+                width: 80px;
+                text-align: center;
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="layout"></div>
+        <div class="navbar1">
+            <button class="navbar11">Crextio</button>
+            <div class="navbar12">
+                <button>Dashboard</button><button>People</button><button>Hiring</button><button>Devices</button><button>Apps</button><button>Salary</button><button>Calender</button><button>Reviews</button>
+                </div>
+        </div>
+        <div class="navbar2">
+            <button class="navbar21">Settings</button>
+           
+        </div>
+        <div class="topnext">
+            <div class="heading">Welcome in,Nixtio</div>
+            <div class="left"><span class="span1">Interviews</span>&emsp;&emsp;<span class="span2">Hired&emsp;</span>&emsp;<span class="span3">Project time&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Output</span>
+                <div class="ld1">&ensp;75%</div>
+                <div class="ld2">&ensp;15%</div>
+                <div class="ld3">&ensp;60%</div>
+                <div class="ld4">&ensp;10%</div>
+            </div>
+            <div class="right">
+
+            </div>
+            
+        </div>
+        <div class="middle">
+            <div class="middle1">
+                <img src="/w.jpg" alt="" style="width:325px ;height:190px ;border-radius:30px ;">
+                <div class="m1txt"><span>Lora Piterson</span> <br>UI/UX Designer</div>
+                <div class="m12">$1,200</div>
+            </div>
+            <div class="middle6">
+                <div class="m21"><span>Progress</span></div>
+                <div class="m22"><span>6.1 h</span></div>
+                <div class="m23">Work Time <br>this week</div>
+               
+                <div class="cd"><div class="m25"></div>
+                <div class="m26"></div>
+                <div class="m27"></div>
+                <div class="m28"></div>
+                <div class="m29"></div>
+                <div class="m210"></div>
+                <div class="m211"></div></div>
+                <div class="cw">
+                <div class="m212"></div>
+                <div class="m213"></div>
+                <div class="m214"></div>
+                <div class="m215"></div>
+                <div class="m216"></div>
+                <div class="m217"></div>
+                <div class="m218"></div></div>
+                <div class="m219"> 5h 23 min</div>
+                <div class="m220"><span>S&emsp;&emsp;M&emsp;&emsp;T&emsp;&emsp;W&emsp;&emsp;T&emsp;&emsp;F&emsp;&emsp;S</span></div>
+            </div>
+            <div class="middle3">
+                <div class="m31"></div>
+                <div class="m32" ><br><span style="font-size: 30px;">02:35 <br>
+                </span>Work Time</div>
+                <div class="m33">Time Tracker</div>
+                
+            </div>
+            <div class="middle4">
+                <div class="m61">Onboarding</div>
+                <div class="m62">18%</div>
+                <div class="m63">30% &emsp;&emsp;&emsp;&ensp;25%&ensp;&emsp;&emsp;&emsp;0%</div>
+                <div class="m64">
+                    <div class="m641"></div>
+                    <div class="m642"></div>
+                    <div class="m643"></div>
+                </div>
+                <div class="m65"></div>
+                <div class="m66"></div>
+                <div class="m67">
+                <div class="m671">Onboarding Task</div>
+                <div class="m672">2/8</div>
+                <div class="m673">Interview</div>
+                <div class="m674">Team Meeting</div>
+                <div class="m675">Project Update</div>
+                <div class="m676">Discuss G3 Goals</div>
+                <div class="m677">HR Policy Review</div>
+            </div>
+            </div>
+            <div class="middle5">
+               <div class="m51"><details><summary>Pension Contributions</summary><p>Lorem ipsum dolor sit amet </p></details><hr></div>
+               <div class="m52"><details><summary>Devices</summary><p>Lorem ipsum dolor sit amet co</p></details><hr></div>
+               <div class="m53"><details><summary>Compensation summary</summary><p>Lorem ipsum dolor ?</p></details><hr></div>
+               <div class="m54"><details><summary>Employee  Benefits</summary><p>Lorem ipsum dol?</p></details></div>
+            </div>
+            <div class="middle2">
+                <div class="m41">August</div>
+                <div class="m42">September 2024</div>
+                <div class="m43">October</div>
+                <div class="m44">
+                    <m411>Mon <br>24</m411>
+                    <m412>Tue <br>22</m412>
+                    <m413>Wed <br>24</m413>
+                    <m414>Thu <br>25</m414>
+                    <m415>Fri <br>26</m415>
+                    <m416>Sat <br>27</m416>
+                </div>
+                <div class="m45">8:00 AM <br><br>9:00 AM <br><br>10:00 AM <br><br>11:00 AM</div>
+                <div class="m46"></div>
+                <div class="m47"></div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial; margin: 0; padding: 0; }
+header, footer { background: #333; color: #fff; padding: 10px; text-align: center; }
+a { color: white; text-decoration: none; margin-left: 10px; }
+.product-grid, .cart-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; justify-content: center; }
+.product-card, .cart-item { border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center; }
+button { background: #28a745; color: white; border: none; padding: 5px 10px; cursor: pointer; margin-top: 5px; }
+button:hover { background: #218838; }
+header, footer { background: #ff69b4; color: white; padding: 10px; text-align: center; }
+button { background: #ff69b4; color: white; border: none; padding: 5px 10px; cursor: pointer; margin-top: 5px; }
+button:hover { background: #d95d9d; }
+.a{
+    width:100%;
+    height:40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    position: absolute;
+    top:600px;
+    background-color: white;
+    color: #333;
+}
+
+   .b{
+    color: aliceblue;
+   }
+   .c{
+    font-size: 20px;
+    float: top;
+   }
+
+.product-grid img{
+    width:200px;
+    height:200px;
+}
+
+
+    </style>
+  <title>My Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="renderProducts()">
+  <header>
+    <h1 class="b">Beauty Shop</h1>
+    <a class="c" href="cart.html">🛒 Cart</a>
+    <div class="home">
+        <img src="/b1 (1).jpeg" alt="" width="50%" height="500px"><img src="/b2.jpeg" alt=""width="50%" height="500px">
+        <img src="/b3.jpeg" alt=""width="50%" height="500px"><img src="/b4.jpeg" alt=""width="50%" height="500px">
+    </div>
+    <div class="a">
+        Beauty
+    </div>
+  </header>
+
+  <div id="product-container" class="product-grid"></div>
+
+  <footer>
+    &copy; 2025 My Shop
+  </footer>
+  <script>
+    const products = [
+        { id: 1, name: "Lipstick", price: 299, img: "/e1.webp"  },
+        { id: 2, name: "Foundation", price: 799, img: '/foundation.jpeg' },
+        { id: 3, name: "Eyeliner", price: 199, img: "/eye.jpeg" },
+        { id: 4, name: "Blush", price: 349, img: "/blush.jpeg" },
+        { id: 5, name: "Face Cream", price: 499, img: "/cream.jpeg"}
+      
+  ];
+  
+  function renderProducts() {
+    const container = document.getElementById('product-container');
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" width="100%">
+        <h3>${p.name}</h3>
+        <p>₹${p.price}</p>
+        <button onclick="addToCart(${p.id})">Add to Cart</button>
+      `;
+      container.appendChild(card);
+    });
+  }
+  
+  function addToCart(id) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(products.find(p => p.id === id));
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Added to cart!");
+  }
+  
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Game</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #3384ca; margin-top: 50px; }
+    #container { max-width: 500px; margin: auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+    button, .option { padding: 10px 20px; margin: 10px; border: none; border-radius: 5px; cursor: pointer; }
+    button { background: #4CAF50; color: white; }
+    .option { background: #f0f0f0; display: block; }
+    .option:hover { background:blue; }
+    .selected { background: #4CAF50; color: white; }
+    .hidden { display: none; }
+    #wrong-answers { text-align: left; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="login-screen">
+      <h2>Welcome to the Quiz Game!</h2>
+      <input type="text" id="username" placeholder="Enter your name"><br>
+      <button onclick="showSubjects()">Start</button>
+    </div>
+
+    <div id="subject-screen" class="hidden">
+      <h2>Select a Subject</h2>
+      <button onclick="startQuiz('HTML')">HTML</button>
+      <button onclick="startQuiz('CSS')">CSS</button>
+      <button onclick="startQuiz('React')">React</button>
+      <button onclick="startQuiz('JS')">JavaScript</button>
+      <button onclick="startQuiz('GitHub')">GitHub</button>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <h3 id="greeting"></h3>
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="result-screen" class="hidden">
+      <h2>Quiz Over!</h2>
+      <p id="final-score"></p>
+      <div id="wrong-answers"></div>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = {
+      HTML: [
+        { q: "What does HTML stand for?", opts: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyper Tool Markup Language"], ans: "Hyper Text Markup Language" },
+        { q: "Which tag creates a hyperlink?", opts: ["<link>", "<a>", "<href>", "<hyper>"], ans: "<a>" },
+        { q: "Which tag creates a paragraph?", opts: ["<para>", "<p>", "<par>", "<text>"], ans: "<p>" },
+        { q: "Which tag creates a line break?", opts: ["<break>", "<lb>", "<br>", "<ln>"], ans: "<br>" },
+        { q: "HTML files have extension?", opts: [".html", ".htm", "both .html and .htm", ".web"], ans: "both .html and .htm" },
+        { q: "Semantic tag example?", opts: ["<div>", "<span>", "<header>", "<b>"], ans: "<header>" },
+        { q: "Which tag shows images?", opts: ["<image>", "<img>", "<pic>", "<src>"], ans: "<img>" },
+        { q: "Default HTML text direction?", opts: ["left-to-right", "right-to-left", "top-to-bottom", "bottom-to-top"], ans: "left-to-right" },
+        { q: "Which is not an HTML tag?", opts: ["<table>", "<ul>", "<p>", "<stylee>"], ans: "<stylee>" },
+        { q: "Which attribute adds tooltip?", opts: ["title", "tooltip", "alt", "hover"], ans: "title" }
+      ],
+      CSS: [
+        { q: "What does CSS stand for?", opts: ["Cascading Style Sheets", "Colorful Style Sheets", "Computer Style Sheets", "Creative Style Sheets"], ans: "Cascading Style Sheets" },
+        { q: "How to change text color?", opts: ["color", "text-color", "font-color", "background-color"], ans: "color" },
+        { q: "Which symbol selects id?", opts: [".", "#", "*", "$"], ans: "#" },
+        { q: "Which symbol selects class?", opts: [".", "#", "*", "$"], ans: "." },
+        { q: "Which position is default?", opts: ["static", "relative", "absolute", "fixed"], ans: "static" },
+        { q: "Which property for font size?", opts: ["font-size", "text-size", "size", "font"], ans: "font-size" },
+        { q: "How to link CSS?", opts: ["<link>", "<style>", "<script>", "<css>"], ans: "<link>" },
+        { q: "Which property for background color?", opts: ["background-color", "bgcolor", "background", "color"], ans: "background-color" },
+        { q: "Which unit is relative?", opts: ["px", "em", "pt", "cm"], ans: "em" },
+        { q: "Which is a CSS framework?", opts: ["Bootstrap", "React", "Angular", "Vue"], ans: "Bootstrap" }
+      ],
+      React: [
+        { q: "React is a?", opts: ["Library", "Framework", "Language", "Database"], ans: "Library" },
+        { q: "JSX stands for?", opts: ["JavaScript XML", "Java Syntax Extension", "JavaScript Extension", "JavaScript XHTML"], ans: "JavaScript XML" },
+        { q: "Which hook for state?", opts: ["useEffect", "useState", "useRef", "useContext"], ans: "useState" },
+        { q: "React uses?", opts: ["Virtual DOM", "Real DOM", "Shadow DOM", "Document Object"], ans: "Virtual DOM" },
+        { q: "React component returns?", opts: ["JSX", "HTML", "CSS", "XML"], ans: "JSX" },
+        { q: "Which lifecycle runs after render?", opts: ["componentDidMount", "constructor", "render", "getDerivedState"], ans: "componentDidMount" },
+        { q: "Which manages side effects?", opts: ["useEffect", "useState", "useRef", "useCallback"], ans: "useEffect" },
+        { q: "React router is used for?", opts: ["Navigation", "Styling", "Testing", "Database"], ans: "Navigation" },
+        { q: "Key prop helps in?", opts: ["Identify elements", "Style elements", "Link elements", "Hide elements"], ans: "Identify elements" },
+        { q: "React is developed by?", opts: ["Google", "Facebook", "Microsoft", "Amazon"], ans: "Facebook" }
+      ],
+      JS: [
+        { q: "Which is a JS framework?", opts: ["React", "Laravel", "Django", "Flask"], ans: "React" },
+        { q: "JavaScript runs in?", opts: ["Browser", "Compiler", "Database", "Server only"], ans: "Browser" },
+        { q: "Which creates a variable?", opts: ["var", "int", "float", "string"], ans: "var" },
+        { q: "Which checks equality + type?", opts: ["==", "===", "!=", "<="], ans: "===" },
+        { q: "Which keyword for function?", opts: ["function", "def", "fun", "lambda"], ans: "function" },
+        { q: "Which event on button click?", opts: ["onclick", "onpress", "onhover", "onselect"], ans: "onclick" },
+        { q: "JS file extension?", opts: [".js", ".javascript", ".java", ".txt"], ans: ".js" },
+        { q: "How to write comment?", opts: ["//", "/* */", "#", "--"], ans: "//" },
+        { q: "typeof 42 returns?", opts: ["number", "string", "object", "undefined"], ans: "number" },
+        { q: "Which loops through array?", opts: ["for", "while", "forEach", "if"], ans: "forEach" }
+      ],
+      GitHub: [
+        { q: "GitHub is for?", opts: ["Version control", "Editing images", "Database", "Hosting websites"], ans: "Version control" },
+        { q: "Which command initializes git?", opts: ["git init", "git start", "git create", "git begin"], ans: "git init" },
+        { q: "To upload changes, use?", opts: ["git push", "git pull", "git clone", "git fork"], ans: "git push" },
+        { q: "To get updates, use?", opts: ["git pull", "git push", "git add", "git commit"], ans: "git pull" },
+        { q: "Create a copy with?", opts: ["git clone", "git copy", "git fork", "git branch"], ans: "git clone" },
+        { q: "Create a branch?", opts: ["git branch", "git new", "git fork", "git switch"], ans: "git branch" },
+        { q: "Save changes to history?", opts: ["git commit", "git push", "git pull", "git stage"], ans: "git commit" },
+        { q: "Stage files with?", opts: ["git add", "git stage", "git commit", "git push"], ans: "git add" },
+        { q: "See status?", opts: ["git status", "git check", "git view", "git log"], ans: "git status" },
+        { q: "Platform owner?", opts: ["Microsoft", "Google", "Facebook", "Amazon"], ans: "Microsoft" }
+      ]
+    };
+
+    let username, subject, current = 0, score = 0, wrong = [];
+
+    function showSubjects() {
+      username = document.getElementById('username').value;
+      if (!username) { alert("Please enter your name!"); return; }
+      document.getElementById('login-screen').classList.add('hidden');
+      document.getElementById('subject-screen').classList.remove('hidden');
+    }
+
+    function startQuiz(selectedSubject) {
+      subject = selectedSubject;
+      current = 0;
+      score = 0;
+      wrong = [];
+      document.getElementById('subject-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+      document.getElementById('greeting').innerText = `Hello, ${username}! (${subject} Quiz)`;
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = quizData[subject][current];
+      document.getElementById('question').innerText = q.q;
+      const optionsDiv = document.getElementById('options');
+      optionsDiv.innerHTML = '';
+      q.opts.forEach(opt => {
+        const btn = document.createElement('div');
+        btn.className = 'option';
+        btn.innerText = opt;
+        btn.onclick = () => selectOption(btn, opt);
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function selectOption(button, selected) {
+      document.querySelectorAll('.option').forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+      document.querySelectorAll('.option').forEach(btn => btn.onclick = null);
+      const correct = quizData[subject][current].ans;
+      if (selected === correct) {
+        score++;
+      } else {
+        wrong.push({ question: quizData[subject][current].q, yourAnswer: selected, correctAnswer: correct });
+      }
+    }
+
+    function nextQuestion() {
+      current++;
+      if (current < 10) {
+        showQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').innerText = `${username}, your score is ${score}/10`;
+      const wrongDiv = document.getElementById('wrong-answers');
+      if (wrong.length === 0) {
+        wrongDiv.innerHTML = "<p>Perfect score! 🎉</p>";
+      } else {
+        wrongDiv.innerHTML = "<h3>Wrong Answers:</h3>";
+        wrong.forEach(item => {
+          wrongDiv.innerHTML += `<p><b>Q:</b> ${item.question}<br><b>Your Answer:</b> ${item.yourAnswer}<br><b>Correct:</b> ${item.correctAnswer}</p>`;
+        });
+      }
+    }
+  </script>
+</body>
+</html>

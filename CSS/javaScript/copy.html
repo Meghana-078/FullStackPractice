@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .head1{
+            display:grid;
+            grid-template-columns: 3fr 1fr 1fr 2fr;
+            grid-template-rows: 1fr;
+            width:100vw;
+            height:100px;
+            border-radius:40px;
+            box-sizing: border-box;
+        }
+        .logo{
+            display:flex;
+            justify-content:flex-start;
+            align-items:center;
+        }
+        .airbnblogo{
+            width:80px;
+            height:30px; 
+        }
+        button:hover{
+            background-color: rgb(217, 215, 212,0.4);
+        }
+        img{
+            flex-wrap:wrap;
+        }
+        .grid button{
+            display:flex;
+            justify-content:flex-start;
+        }
+        .grid div{
+            box-sizing: border-box;
+        }
+        .Homes,.Experiences{
+            
+            width:100px;
+            height:30px;
+            border-radius: 30px;
+            border:none;
+            background-color: white;
+        }
+        .Homemain,.Expmain{
+            display:flex;
+            justify-content:flex-start;
+            align-items:center;
+        }
+        .searchcontent{
+            display:flex;
+            justify-content:flex-end;
+            align-items:center;
+            gap:20px;
+            margin-right:50px
+        }
+        .search3{
+            height:30px;
+            background-color: white;
+            border-radius:30px;
+            width:80px;
+            border:1px solid rgb(187, 184, 184,0.5);
+        }
+        .search2{
+            width:80px;
+            height:30px;
+            border:none;
+            background-color: white;
+            border-radius:30px;
+        }
+        .search1{
+            height:30px;
+            width:150px;
+            border:none;
+            background-color: white;
+            border-radius:30px;
+        }
+        .search-header:hover{
+            box-shadow:0px 0px 1100px rgb(236, 64, 64);
+        }
+        .search-header{
+            width:60%;
+            height:60px;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 0.5fr;
+            grid-template-rows:1fr;
+            border:1px solid rgb(0, 0, 0,0.2);
+            border-radius:30px;
+            margin-bottom:20px;
+            box-shadow:0px 0px 3px rgb(128, 128, 128,0.4);
+        }
+
+        .main-search{
+            display:flex;
+            justify-content:center;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgb(237, 169, 169);
+        }
+        .where:hover{
+
+        }
+        .Where::after,.Checkin::after,.AddGuests::after{
+            content:'';
+            position:absolute;
+            width:1px;
+            height:40px;
+            background: linear-gradient(100deg,rgb(255, 117, 4),white,green);
+            top:10px;
+            right:0px;
+        }
+        .Where,.Checkin,.AddGuests{
+            width:100%;
+            height:100%;
+            border-radius: 30px;
+            border:none;
+            background-color: white;
+            position:relative;
+            gap:2px;
+            
+        }
+        .fetch4{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100%;
+            width:100%;
+        }
+        .searchlogo{
+            width:30px;
+            height:30px;
+            border-radius:50%;
+            background-color: rgb(255, 68, 68);
+            color: white;
+            border:none;
+            cursor: pointer;
+        }
+        .line{
+            background-color:rgb(83, 82, 82,0.1);
+        }
+        header{
+            position:sticky;
+            box-sizing: border-box;
+        }
+        .profilenavbar{
+            width:100px;
+            height:200px;
+            display:absolute;
+            background-color: red;
+            transition: ease-in-out translate(-150px);
+        }
+        .hidenav{
+            display:flex;
+            justify-content:flex-end;
+            height:100%;
+            width:100%;
+            top:50px;
+            position:absolute;
+            
+        }
+        header:hover{
+            box-shadow:0px 0px 110px rgb(124, 225, 52);
+            
+        }
+        header{
+            margin:5px;
+            border-radius: 20px;;
+            border:none;
+        }
+        .sections{
+            display:grid;
+            grid-template-columns:0.5fr 7fr 0.5fr 1fr 2fr ;
+            grid-template-rows: 70px;
+            gap:10px;
+        }
+        .leftmove,.rightmove{
+            border-radius:50%;
+            height:30px;
+            width:30px;
+            border:none;
+            opacity:0.3;
+        }
+        .left,.right{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .filter{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .filt{
+            width:90%;
+            height:30px;
+            border:1px solid rgb(197, 191, 191,0.5);
+            background-color: white;
+            border-radius:6px;
+            padding:3px;
+            font-size:x-small;
+        }
+        .prices{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size: 14px;
+        }
+        .grid{
+            margin-top:20px;
+            display:grid;
+            grid-template-columns: repeat(auto-fit,265px );
+            gap:30px;
+            grid-template-rows: repeat(auto-fit,1fr );
+            gap:30px;
+            margin-left: 30px;
+        }
+       
+        img:hover{
+            
+            
+            cursor:pointer;
+        }
+        img{
+            box-sizing: border-box;
+            width:265px;
+            height:200px;
+            border-radius:30px;
+            position:relative;
+            box-sizing:border-box;
+        }
+      
+        .selection button{
+            width:5%;
+            height:20px;
+            flex-wrap: wrap;
+        }
+        .selection{
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            overflow-x:scroll;
+            overflow-wrap: wrap;
+            scroll-behavior: smooth;
+            scrollbar-width:none;
+        }
+        .views{
+            display:flex;
+            gap:60px;  
+        }
+        li{
+            list-style: none;
+            width:30px;
+            height:40px;
+            box-sizing: border-box;
+        }
+        .icon{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            cursor: pointer;
+        }
+        
+        li p{
+            color:grey;
+            font-size:small;
+        }
+        .grid.div{
+            position:absolute;
+        }
+        .image1text{
+            margin-left:10px;
+        }
+        .right{
+            float:right;
+            padding-right:20px;
+            gap:2px;
+        }
+        .right i{
+            color:rgb(255, 0, 0);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head1">
+            <div class="logo">
+                &emsp;&emsp;&emsp;<img src="/airbnbbg.png" alt="not found" class="airbnblogo">
+            </div>
+            <div class="Homemain">
+                <button class="Homes"><strong>Homes</strong></button>
+            </div>
+            <div class="Expmain">
+                <button class="Experiences">Experiencies</button>
+            </div>
+            <div class="searchcontent">
+                <button class="search1"><strong>Airbnb your home</strong></button>
+                <button class="search2"><i class="fa-solid fa-globe"></i></button>
+                <button class="search3"><i class="fa-solid fa-bars"></i>&emsp;&emsp;<i class="fa-solid fa-user"></i></button>
+            </div>
+        </div>
+        <div class="main-search">
+            <div class="search-header">
+                <div class="fetch1">
+                    <button class="Where"><p><b>Where</b></p>
+                        <p>Search destinations</p></button>
+                </div>
+                <div class="fetch2">
+                    <button class="Checkin"><p><b>Check In</b></p>
+                    <p>Add dates</p></button>
+                </div>
+                <div class="fetch3">
+                    <button class="AddGuests"><p><b>Who</b></p>
+                        <p>Add Guests</p></button>
+                </div>
+                <div class="fetch4">
+                    <button class="searchlogo"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header> 
+    <div class="sections">
+        <div class="left">
+            <button class="leftmove" onclick="goprev()"><b>&lt;</b></button>
+        </div>
+        <div class="selection">
+            <ul class="views">
+                <li class="icon box1">
+                    <button><i class="fa-sharp-duotone fa-solid fa-water"></i></button>
+                    <p>Lake</p>
+                </li>
+                <li class="icon box2">
+                    <button><i class="fa-solid fa-icons"></i></button>
+                    <p>icons</p>
+                </li>
+                <li class="icon box3">
+                    <button><i class="fa-duotone fa-solid fa-warehouse"></i></button>
+                    <p>Lake</p>
+                    
+                </li>
+                <li class="icon box4">
+                    <button><i class="fa-solid fa-hotel"></i></i></button>
+                    <p>Farms</p>
+                    
+                </li>
+                <li class="icon box5">
+                    <button><i class="fa-regular fa-snowflake"></i></button>
+                    <p>Rooms</p>
+
+                </li>
+                <li class="icon box6">
+                    
+                    <button><i class="fa-solid fa-umbrella-beach"></i></button>
+                    <p>Arctic</p>
+                </li>
+                <li class="icon box7">
+                    <button><i class="fa-duotone 
+                        fa-solid fa-house-chimney-window"></i></button>
+                        <p>Beach</p>
+
+                </li>
+                <li class="icon box8">
+
+                    <button><i class="fa-duotone fa-solid fa-person-swimming"></i></button>
+                    <p>Amazing pool</p>
+                </li>
+                <li class="icon box9">
+
+                    <button><i class="fa-duotone fa-solid fa-utensils"></i></button>
+                    <p>Luxe</p>
+                </li>
+                <li class="icon box10">
+                    <button><i class="fa-solid fa-mountain-sun"></i></button>
+                    <p>countryside</p>
+
+                </li>
+                <li class="icon box11">
+                    <button><i class="fa-solid fa-tree"></i></button>
+                    <p>TreeHouses</p>
+
+                </li>
+                <li class="icon box12">
+                    <button><i class="fa-solid fa-sailboat"></i></button>
+                    <p>Boats</p>
+
+                </li>
+                <li class="icon box13">
+                    <button><i class="fa-solid fa-landmark-dome"></i></button>
+                    <p>Tree</p>
+
+                </li>
+                <li class="icon box14">
+                    <button><i class="fa-regular fa-chess-rook"></i></button>
+                    <p>historial homes</p>
+
+                </li>
+                <li class="icon box1">
+                    <button><i class="fa-sharp-duotone fa-solid fa-water"></i></button>
+                    <p>Castels</p>
+                </li>
+                <li class="icon box2">
+                    <button><i class="fa-solid fa-icons"></i></button>
+                    <p>Tiny homes</p>
+                </li>
+                <li class="icon box3">
+                    <button><i class="fa-duotone fa-solid fa-warehouse"></i></button>
+                    <p>Lakefront</p>
+                    
+                </li>
+                <li class="icon box4">
+                    <button><i class="fa-solid fa-hotel"></i></i></button>
+                    <p>Bed&Breakfast</p>
+                    
+                </li>
+                <li class="icon box5">
+                    <button><i class="fa-regular fa-snowflake"></i></button>
+                    <p>Grid</p>
+
+                </li>
+                <li class="icon box6">
+                    
+                    <button><i class="fa-solid fa-umbrella-beach"></i></button>
+                    <p>National parks</p>
+                </li>
+                <li class="icon box7">
+                    <button><i class="fa-duotone 
+                        fa-solid fa-house-chimney-window"></i></button>
+                        <p>OMG!</p>
+
+                </li>
+                <li class="icon box8">
+
+                    <button><i class="fa-duotone fa-solid fa-person-swimming"></i></button>
+                    <p>Design</p>
+                </li>
+                <li class="icon box9">
+
+                    <button><i class="fa-duotone fa-solid fa-utensils"></i></button>
+                    <p>Surfing</p>
+                </li>
+                <li class="icon box10">
+                    <button><i class="fa-solid fa-mountain-sun"></i></button>
+                    <p>Trending</p>
+
+                </li>
+                <li class="icon box11">
+                    <button><i class="fa-solid fa-tree"></i></button>
+                    <p>Canves</p>
+
+                </li>
+                <li class="icon box12">
+                    <button><i class="fa-solid fa-sailboat"></i></button>
+                    <p>Tropical</p>
+
+                </li>
+                <li class="icon box13">
+                    <button><i class="fa-solid fa-landmark-dome"></i></button>
+                    <p>Cabins</p>
+
+                </li>
+                <li class="icon box14">
+                    <button><i class="fa-regular fa-chess-rook"></i></button>
+                    <p>New</p>
+
+                </li>
+            </ul>     
+        </div>
+        <div class="right">
+            <button class="rightmove" onclick="gonext()"><b>&gt;</b></button>
+        </div>
+        
+        <div class="filter">
+            <button class="filt"><i class="fa-solid fa-sliders"></i>&emsp;Filters</button>
+            
+        </div>
+        <div class="prices">
+            <p><i class="fa-solid fa-tags fa-rotate-by fa-xs" style=" color: #ff0000; --fa-rotate-angle: 320deg;"></i>
+            Prices include all fees</p>
+        </div>
+    </div>   
+    <div class="grid">
+        <div class="image1">
+            <img src="./Photos/Madgon.jpg" alt="The plce view is no updated">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+            
+        </div>
+        <div class="image2">
+            <img src="./Photos/Assagao.jpg" alt="" >
+            <div class="image1text">
+                <b>Cape town,South Africa</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.9</p>
+                </div>
+                <p>stay with Tracey-Leigh.Gardener & <co-host></co-host></p>
+                <p>8-13 May</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image3">
+            <img src="./Photos/BengaluruUrban.jpg" alt="">
+            <div class="image1text">
+                <b>Bengaluru,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.8</p>
+                </div>
+                <p>On BengaluruUrban</p>
+                <p>8-13 July</p>
+                <p>Rs:15,417 for 4 nights</p>
+            </div>
+        </div>
+        <div class="image4">
+            <img src="./Photos/chevella.jpg" alt="">
+            <div class="image1text">
+                <b>Marfa,Portugal</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.85</p>
+                </div>
+                <p>Stay with Alexandra.emergency service</p>
+                <p>4-9 May</p>
+                <p>Rs:25,417 for 8 nights</p>
+            </div>
+        </div>
+        <div class="image5">
+            <img src="./Photos/hyderabad.jpg" alt="">
+            <div class="image1text">
+                <b>Kecamatan Tegallalan,Indonesia</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.94</p>
+                </div>
+                <p>Stay with Augs</p>
+                <p>8-10 Jun</p>
+                <p>Rs:19,255 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image6">
+            <img src="./Photos/Mandrem.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image7">
+            <img src="./Photos/Assagao.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image8">
+            <img src="./Photos/Mahabaleshwar.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image9">
+            <img src="./Photos/Pachagani.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image10">
+            <img src="./Photos/pune.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image11">
+            <img src="./Photos/Raja.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image12">
+            <img src="./Photos/vagator.jpg" alt=""></img>
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image13">
+            <img src="./Photos/Bilalgo.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image14">
+            <img src="./Photos/calangute.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+        <div class="image15">
+            <img src="./Photos/Hadripura.jpg" alt="">
+            <div class="image1text">
+                <b>Kollam,india</b>
+                <div class="right">
+                    <i class="fa-sharp-duotone fa-solid fa-star fa-2xs"></i>
+                    <p>4.93</p>
+                </div>
+                <p>On Ashtamudi Lake</p>
+                <p>8-13 Jun</p>
+                <p>Rs:16,417 for 5 nights</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

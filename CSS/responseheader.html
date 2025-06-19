@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        ul{
+            display:flex;
+            gap:100px;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+        li{
+            list-style: none;
+        }
+        .slider{
+            height:350px;
+            width:150px;
+            color: white;
+            background-color:black;
+            transform:translate(-150px);
+            transition-delay:0.5s;
+            transition-timing-function:cubic-bezier(.47,.04,.75,1.03);
+        }
+        #toggle:checked ~ .slider{
+            transform: translate(0px);
+            background-color: black;
+            color: white;
+        }
+        @media screen and (max-width:600px){
+            .notshow{
+                display:none;
+            }
+            .icon{
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><label for="toggle"></label><i class="icon" class="fa-regular fa-bars"></i></li>
+            <li><img src="/logo.jpg"  width="60px" height="40px" class="icon"></li>
+            <li class="notshow">Home</li>
+            <li class="notshow">Pages</li>
+            <li class="notshow">Policies&Conditions</li>
+            <li class="notshow">Blog</li>
+            <li class="notshow">Events</li>
+            <li class="notshow">Community</li>
+            <li class="notshow">Students</li>
+            <li class="notshow"><i class="icon" class="fa-solid fa-moon"></i></li>
+        </ul>
+        <div class="slider">
+            <li>Home</li>
+            <li>Pages</li>
+            <li>Policies&Conditions</li>
+            <li>Blog</li>
+            <li>Events</li>
+            <li>Community</li>
+            <li>Students</li>
+        </div>
+    </div>
+</body>
+</html>

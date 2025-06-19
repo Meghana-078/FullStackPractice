@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .d1,.d2,.d3{
+            width:200px;
+            height:200px;
+            background-color: aqua;
+            border: 1px solid black;
+            display: flex;
+        }
+        .child{
+            width:100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+    </div>
+    <div class="child" draggable="true"></div>
+    <script>
+         document.getElementsByClassName('d1')[0].addEventListener('dragover',function(e){
+            e.preventDefault()
+        })
+        document.getElementsByClassName('child')[0].addEventListener('dragstart',function(e){
+            drag=e.target;
+        })
+        document.getElementsByClassName('d1')[0].addEventListener('drop',function(e){
+            e.target.appendChild(drag)
+        })
+        document.getElementsByClassName('d2')[0].addEventListener('dragover',function(e){
+            e.preventDefault()
+        })
+        document.getElementsByClassName('child')[0].addEventListener('dragstart',function(e){
+            drag=e.target;
+        })
+        document.getElementsByClassName('d2')[0].addEventListener('drop',function(e){
+            e.target.appendChild(drag)
+        })
+        document.getElementsByClassName('d3')[0].addEventListener('dragover',function(e){
+            e.preventDefault()
+        })
+        document.getElementsByClassName('child')[0].addEventListener('dragstart',function(e){
+            drag=e.target;
+        })
+        document.getElementsByClassName('d3')[0].addEventListener('drop',function(e){
+            e.target.appendChild(drag)
+        })
+        document.body.addEventListener('dragover',function(e){
+            e.preventDefault()
+        })
+        document.body.addEventListener('dragstart',function(e){
+            drag=e.target;
+        })
+        document.body.addEventListener('drop',function(e){
+            e.target.appendChild(drag)
+        })
+    </script>
+</body>
+</html>
